@@ -60,7 +60,7 @@ Table servicios_interior {
   lavado_motor INTEGER
 }
 
-Table Servicios_Exterior {
+Table servicios_exterior {
   id SERIAL [pk, increment]
   descon_pintura INTEGER
   recons_pintura INTEGER
