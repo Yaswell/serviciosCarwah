@@ -51,28 +51,23 @@ Table planes {
   descripcion VARCHAR(500)
 }
 
-Table plan_del_cliente {
-  plan_id INTEGER [ref: > planes.id]
-  cliente_id INTEGER [ref: > clientes.id]
-}
-
-Table Servicios_Interior {
+Table servicios_interior {
   id  SERIAL [pk, increment]
-  HID_Tableto_Paneles int
-  Ozono int
-  HID_Leather_Vynil int
-  Limpieza_Interior int
-  Lavado_Motor int
+  hid_tablero_paneles INTEGER
+  ozono INTEGER
+  hid_leather_vynil INTEGER
+  limpieza_interior INTEGER
+  lavado_motor INTEGER
 }
 
 Table Servicios_Exterior {
   id SERIAL [pk, increment]
-  Descon_Pintura int
-  Recons_Pintura int
-  HID_Plasticos int
-  Encerado_Mano int
-  Encerado_Maquina int
-  Pulido_Focos int
+  descon_pintura INTEGER
+  recons_pintura INTEGER
+  hid_plasticos INTEGER
+  encerado_mano INTEGER
+  encerado_maquina INTEGER
+  pulido_focos INTEGER
 }
 
 Table orden {
