@@ -1,0 +1,83 @@
+Table usuarios {
+  id SERIAL [pk, increment]
+  correo VARCHAR(20)
+  nombre_de_usuario VARCHAR(20)
+  constrasena VARCHAR(50)
+  nombre VARCHAR(10)
+  apellido VARCHAR(10)
+  is_admin BOOLEAN
+  cargo VARCHAR(30)
+  // creation of token
+}
+
+Table clientes {
+  id SERIAL [pk, increment]
+  nombre VARCHAR(50) 
+  apellido VARCHAR(50)
+  telefono VARCHAR(10)
+  correo VARCHAR(30)
+}
+
+Table vehiculos {
+  id SERIAL [pk, increment]
+  marca VARCHAR(20)
+  modelo VARCHAR(20)
+  placa VARCHAR(10)
+  color VARCHAR(25)
+  tipo_de_vehiculo VARCHAR(50)
+  cliente_id INTEGER [ref: > clientes.id]
+}
+
+Table maed_servicios {
+  id SERIAL [pk, increment]
+  lavador VARCHAR(20)
+  asesor VARCHAR(20)
+  objetos_dejados VARCHAR(100)
+  fecha_hora TIMESTAMP
+  choques_ralladuras VARCHAR(100)
+  cliente_id INTEGER [ref: > clientes.id]
+}
+
+Table planes {
+  id SERIAL [pk, increment]
+  tipo VARCHAR(30)
+  economico INTEGER
+  premium INTEGER
+  super_premium INTEGER
+  ceramic_counting INTEGER
+  new INTEGER
+  vip INTEGER
+  diamond INTEGER
+  descripcion VARCHAR(500)
+}
+
+Table plan_del_cliente {
+  plan_id INTEGER [ref: > planes.id]
+  cliente_id INTEGER [ref: > clientes.id]
+}
+
+Table Servicios_Interior {
+  id  SERIAL [pk, increment]
+  HID_Tableto_Paneles int
+  Ozono int
+  HID_Leather_Vynil int
+  Limpieza_Interior int
+  Lavado_Motor int
+}
+
+Table Servicios_Exterior {
+  id SERIAL [pk, increment]
+  Descon_Pintura int
+  Recons_Pintura int
+  HID_Plasticos int
+  Encerado_Mano int
+  Encerado_Maquina int
+  Pulido_Focos int
+}
+
+Table orden {
+  id SERIAL [pk, increment]
+  fecha_hora TIMESTAMP
+  orden_objecto VARCHAR(500)
+  cliente_id INTEGER [ref: > clientes.id]
+}
