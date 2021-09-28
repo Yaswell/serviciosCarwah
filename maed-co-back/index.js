@@ -7,7 +7,7 @@ pool
     port: 5432,
     database: 'maed',
     user: 'postgres',
-    password: '1125Lenny'
+    password: 'delarosa'
     })
 
     .then(() => {

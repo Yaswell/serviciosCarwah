@@ -21,4 +21,4 @@ exports.down = pgm => {
     `);
 };
 
-//DATABASE_URL=postgres://postgres:1125Lenny@localhost:5432/maed npm run migrate up
+//DATABASE_URL=postgres://postgres:delarosa@localhost:5432/maed npm run migrate up
