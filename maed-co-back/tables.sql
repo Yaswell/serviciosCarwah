@@ -23,5 +23,5 @@ CREATE TABLE inside_services (
     ozono INTEGER,
     hid_leather_vynil INTEGER,
     limpieza_interior INTEGER,
-    lavado_motor INTEGER,
+    lavado_motor INTEGER
 );
