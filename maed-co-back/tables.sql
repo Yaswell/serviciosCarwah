@@ -25,3 +25,15 @@ CREATE TABLE inside_services (
     limpieza_interior INTEGER,
     lavado_motor INTEGER
 );
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY
+  email VARCHAR(20)
+  user_name VARCHAR(20)
+  password VARCHAR(50)
+  name VARCHAR(10)
+  last_name VARCHAR(10)
+  is_admin BOOLEAN
+  rol VARCHAR(30)
+);
+
