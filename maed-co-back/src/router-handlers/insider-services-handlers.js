@@ -27,3 +27,4 @@ class insideServiceHandlers{
         return toCamelCase(rows)[0];
     }
 }
+module.exports = insideServiceHandlers;

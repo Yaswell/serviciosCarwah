@@ -59,3 +59,4 @@ router.put('/inside_services', async (req, res) => {
         }
     }
 });
+module.exports = router;
