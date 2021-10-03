@@ -26,14 +26,16 @@ CREATE TABLE inside_services (
     lavado_motor INTEGER
 );
 
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY
-  email VARCHAR(20)
-  user_name VARCHAR(20)
-  password VARCHAR(50)
-  name VARCHAR(10)
-  last_name VARCHAR(10)
-  is_admin BOOLEAN
-  rol VARCHAR(30)
-);
 
+Table plans (
+  id SERIAL [pk, increment]
+  tipo VARCHAR(30)
+  economico INTEGER
+  premium INTEGER
+  super_premium INTEGER
+  ceramic_counting INTEGER
+  New INTEGER
+  vip INTEGER
+  diamond INTEGER
+  descripcion VARCHAR(500)
+);

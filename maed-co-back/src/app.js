@@ -3,13 +3,13 @@ const app = express();
 const clientsRouter = require('./routers/clients');
 const inside_servicesRouter = require ('./routers/inside-services');
 const outside_servicesRouter = require('./routers/outside-services');
-const usersRouter = require('./routers/users');
+const plansRouter = require('./routers/plans');
 
 app.use(express.json());
 app.use(clientsRouter);
 app.use(inside_servicesRouter)
 app.use(outside_servicesRouter)
-app.use(usersRouter);
+app.use(plansRouter);
 
 
 module.exports = app;
