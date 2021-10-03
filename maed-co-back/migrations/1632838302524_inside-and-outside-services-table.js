@@ -21,4 +21,3 @@ exports.down = pgm => {
         DROP TABLE outside_services;
     `);
 };
-//npm run migrate inside and outside services table
