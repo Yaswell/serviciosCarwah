@@ -12,4 +12,11 @@ app.use(outside_servicesRouter)
 app.use(plansRouter);
 
 
+const usersRouter = require('./routers/users');
+
+app.use(express.json());
+app.use(clientsRouter);
+app.use(usersRouter);
+
+
 module.exports = app;
