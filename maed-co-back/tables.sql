@@ -25,3 +25,16 @@ CREATE TABLE inside_services (
     limpieza_interior INTEGER,
     lavado_motor INTEGER,
 );
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(20),
+    username VARCHAR(20) UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    first_name VARCHAR(15),
+    last_name VARCHAR(15),
+    is_admin BOOLEAN,
+    role VARCHAR(30),
+    tokens JSON NOT NULL, 
+    CHECK(COALESCE(username, email) IS NOT NULL)
+);
