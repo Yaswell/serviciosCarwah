@@ -11,17 +11,17 @@ class outsideServicesHandlers{
         return toCamelCase(rows)[0];
     }
     
-    static async insert(descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos) {
+    static async insert(desconPintura, reconsPintura, hidPlasticos, enceradoMano, enceradoMaquina, pulidoFocos) {
         const { rows } = await pool.query(`INSERT INTO outside_services (descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos)
-         VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`, [descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos]);
+         VALUES($1, $2, $3, $4, $5, $6) RETURNING *;`, [desconPintura, reconsPintura, hidPlasticos, enceradoMano, enceradoMaquina, pulidoFocos]);
         
         return toCamelCase(rows)[0];
     }
 
-    static async update(id, descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos) {
+    static async update(id, desconPintura, reconsPintura, hidPlasticos, enceradoMano, enceradoMaquina, pulidoFocos) {
         const { rows } = await pool.query(`UPDATE outside_services 
         SET descon_pintura = $2, recons_pintura = $3, hid_plasticos = $4, encerado_mano = $5, encerado_maquina = $6, pulido_focos = $7
-        WHERE id = $1 RETURNING *;`, [id, descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos]);
+        WHERE id = $1 RETURNING *;`, [id, desconPintura, reconsPintura, hidPlasticos, enceradoMano, enceradoMaquina, pulidoFocos]);
 
         return toCamelCase(rows)[0];
     }
