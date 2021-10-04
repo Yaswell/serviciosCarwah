@@ -1,17 +1,23 @@
 const express = require('express');
 const app = express();
 const clientsRouter = require('./routers/clients');
-const inside_servicesRouter = require ('./routers/inside-services');
-const outside_servicesRouter = require('./routers/outside-services');
+const insideServicesRouter = require ('./routers/inside-services');
+const outsideServicesRouter = require('./routers/outside-services');
 const plansRouter = require('./routers/plans');
 const usersRouter = require('./routers/users');
+const vehiclesRouter = require('./routers/vehicles');
+const maedServicesRouter = require('./routers/maed-services');
+const ordersRouter = require('./routers/orders');
 
 app.use(express.json());
 app.use(clientsRouter);
-app.use(inside_servicesRouter)
-app.use(outside_servicesRouter)
+app.use(insideServicesRouter);
+app.use(outsideServicesRouter);
 app.use(plansRouter);
 app.use(usersRouter);
+app.use(vehiclesRouter);
+app.use(maedServicesRouter);
+app.use(ordersRouter);
 
 
 module.exports = app;

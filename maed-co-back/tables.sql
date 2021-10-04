@@ -26,9 +26,8 @@ CREATE TABLE inside_services (
     lavado_motor INTEGER
 );
 
-
 Table plans (
-  id SERIAL [pk, increment]
+  id SERIAL PRIMARY KEY
   tipo VARCHAR(30)
   economico INTEGER
   premium INTEGER
@@ -51,5 +50,31 @@ CREATE TABLE users (
     role VARCHAR(30),
     tokens JSON NOT NULL, 
     CHECK(COALESCE(username, email) IS NOT NULL)
+);
 
+CREATE TABLE vehicles (
+    id SERIAL PRIMARY KEY,
+    brand VARCHAR(20) NOT NULL,
+    model VARCHAR(20) NOT NULL,
+    plate VARCHAR(20) NOT NULL,
+    color VARCHAR(20) NOT NULL,
+    vehicle_type VARCHAR(20),
+    client_id INTEGER NOT NULL REFERENCES clients(id) ON DELETE CASCADE
+);
+
+CREATE TABLE maed_services (
+    id SERIAL PRIMARY KEY,
+    washer VARCHAR(20) NOT NULL,
+    adviser VARCHAR(20),
+    left_objects VARCHAR(100),
+    date_and_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    crashes VARCHAR(100),
+    client_id INTEGER NOT NULL REFERENCES clients(id) ON DELETE CASCADE
+);
+
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    date_and_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    order_details JSON NOT NULL,
+    client_id INTEGER NOT NULL REFERENCES clients(id) ON DELETE CASCADE
 );
