@@ -1,65 +1,157 @@
 //sass --watch sass/style.scss css/style.css
 //Variables
+@use 'nuevo-servicio';
 $color-primario: #F8A01A;
-
 
 
 body {
     background: #F7F8FC;
 }
+    .wraper{
+        display: flex;
+        position: absolute;
 
-
-    .navigation {
-        width: 255px;
-        height: 100vh;
-        background: #363740;
-        
-        .logo{
-            padding-top: 30px;
-            padding-bottom: 30px;
+        .sidebar {
+            width: 255px;
+            height: 100vh;
+            background: #363740;
+            position: absolute;
+            
+            .logo{
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            ul {
+                padding: 0;
+                li {
+                    display: flex;
+                    padding: 20px;
+                    color: #A4A6B3;
+    
+                    h2 {
+                        font-family: Mulish;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        letter-spacing: 0.4px;
+                        color: #ffffff;
+                    }
+    
+                    icon {
+                        svg {
+                            width: 35px;
+                            height: 35px;
+                        }
+                       
+                    }
+                    img{
+                        
+                        margin-left: 40px;
+                      
+                    }
+                    
+    
+                    .title {
+                        margin-left: 15px;
+                        font-family: Mulish;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        margin-top: 1px;
+                    }
+                    
+                }
+                hr{
+                    color: #A4A6B3;
+                }
+                
+                .active-tab {
+                    background: $color-primario;
+                    color: #FFFFFF;
+                    border-left: 5px solid #FFFFFF;
+                }
+                .tab:hover{
+                    background: #A4A6B3;
+                    color: #ffffff;
+                    transition: all 0.8s;
+                }
+            }
         }
-        ul {
-            padding: 0;
-            li {
-                display: flex;
-                padding: 20px;
-                color: #A4A6B3;
+    
 
-                h2 {
+        .section{
+            
+            margin-left: 255px;
+            width: 100%;
+            .header {
+                
+                padding: 20px;
+                background: #fff;
+                color: #717171;
+                border-bottom: 1px solid #e0e4e8;
+                text-align: right;
+                
+               
+                    
+                    .navbartext{
+                        height: 12%;        
+                        
+                        text-decoration: none;
+                        text-align: right;
+                        list-style: none;
+                        display: inline-block;
+                        margin-right: 10px;
+                        text-decoration: none;
+                        font-size: 20px;
+                        color:#717171;
+                        
+                        
+                    }
+                    //El dropdown aun no funciona
+                    .sub-menu{
+                        display: none;
+            
+                    }
+                    .dropdown-item div a{
+                        display: block;
+                        
+                    }
+                    .dropdownMenuLink div:hover .dropdown-item{
+                        display: block;
+                    }
+                    
+            
+                    
+                }
+            .main-content{
+                margin-left: 50px;
+               margin-right: 50px;
+               margin-top: 30px;
+                h1 {
+    
                     font-family: Mulish;
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 19px;
-                    line-height: 24px;
+                    font-size: 40px;
+                
                     letter-spacing: 0.4px;
-                    color: #FFFFFF;
-                }
-
-                icon {
-                    svg {
-                        width: 35px;
-                        height: 35px;
-                    }
-                    img{
-                        width: 35px;
-                        height: 35px;
-                    }
-                }
-
-                .title {
-                    margin-left: 15px;
-                    font-family: Mulish;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 16px;
-                    margin-top: 1px;
+                    color:#252733;
                 }
             }
 
-            .active-tab {
-                background: $color-primario;
-                color: #FFFFFF;
-                border-left: 5px solid #FFFFFF;
-            }
+           
+    
+    
         }
+    
+      
+
+
     }
+
+    
+    
+
+
+    
