@@ -71,6 +71,19 @@ body {
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
   text-align: right;
+  /*
+  .dropdown-item{
+      display: none;
+
+  }
+  .dropdown-item div a{
+      display: block;
+
+  }
+  .dropdownMenuLink div:hover .dropdown-item{
+      display: block;
+  }
+  */
 }
 .wraper .section .header .navbartext {
   height: 12%;
@@ -82,15 +95,6 @@ body {
   text-decoration: none;
   font-size: 20px;
   color: #717171;
-}
-.wraper .section .header .sub-menu {
-  display: none;
-}
-.wraper .section .header .dropdown-item div a {
-  display: block;
-}
-.wraper .section .header .dropdownMenuLink div:hover .dropdown-item {
-  display: block;
 }
 .wraper .section .main-content {
   margin-left: 50px;
