@@ -155,11 +155,15 @@ body {
                         //margin-left: 120px;
                         //margin-right: 110px;
                         padding: 10px;
+                        justify-self: center;
+                        svg{
+                            width: 100%;
+                        }
                     }
                     
                     .serch-add{
                         justify-self: right;
-                       
+                        margin: 0%;
                         input{
                             width:328px;
                             height: 51px;
@@ -173,6 +177,7 @@ body {
                         .btnSearch{
                             border: none;
                             background-color: transparent;
+                            width: 35px;
                             img{
                                 width: 32.72px;
                                 height: 33px;

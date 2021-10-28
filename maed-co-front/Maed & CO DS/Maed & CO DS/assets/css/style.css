@@ -117,9 +117,14 @@ body {
 }
 .wraper .section .main-content .box .state-bar {
   padding: 10px;
+  justify-self: center;
+}
+.wraper .section .main-content .box .state-bar svg {
+  width: 100%;
 }
 .wraper .section .main-content .box .serch-add {
   justify-self: right;
+  margin: 0%;
 }
 .wraper .section .main-content .box .serch-add input {
   width: 328px;
@@ -133,6 +138,7 @@ body {
 .wraper .section .main-content .box .serch-add .btnSearch {
   border: none;
   background-color: transparent;
+  width: 35px;
 }
 .wraper .section .main-content .box .serch-add .btnSearch img {
   width: 32.72px;
