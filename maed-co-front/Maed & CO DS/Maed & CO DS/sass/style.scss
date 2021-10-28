@@ -1,6 +1,7 @@
 //sass --watch sass/style.scss css/style.css
 //Variables
-@use 'nuevo-servicio';
+@use '_nuevo-servicio';
+@use '_nuevo-servicio2';
 $color-primario: #F8A01A;
 
 
@@ -15,7 +16,9 @@ body {
             width: 255px;
             height: 100vh;
             background: #363740;
-            position: absolute;
+            
+            position: sticky;
+	        top: 0; 
             
             .logo{
                 padding-top: 30px;
@@ -82,10 +85,11 @@ body {
 
         .section{
             
-            margin-left: 255px;
-            width: 100%;
+            
+            
             .header {
-                
+                position: sticky;
+	            top: 0; 
                 padding: 20px;
                 background: #fff;
                 color: #717171;
@@ -139,106 +143,7 @@ body {
                     color:#252733;
                 }
 
-                .box {
-                    border: 1px solid grey;
-                    border-radius: 25px;
-                    max-width: 100%;
-                    min-height: 600px;
-                    color: gray;
-                    background-color:white;
-                    padding: 20px;
-                    display:grid;
-                    
-                    .state-bar{
-                        //Esto hay que editarlo a ala hora de un pantalla pequeña
-                        //margin: 30px;
-                        //margin-left: 120px;
-                        //margin-right: 110px;
-                        padding: 10px;
-                        justify-self: center;
-                        svg{
-                            width: 100%;
-                        }
-                    }
-                    
-                    .serch-add{
-                        justify-self: right;
-                        margin: 0%;
-                        input{
-                            width:328px;
-                            height: 51px;
-                            border-radius: 8px;
-                            stroke: #F0F1F7;
-                            font-family:"IBM Plex Sans";
-                            font-size: 22px;
-                            font-style: italic;
-                        
-                        }
-                        .btnSearch{
-                            border: none;
-                            background-color: transparent;
-                            width: 35px;
-                            img{
-                                width: 32.72px;
-                                height: 33px;
-                            }
-                        }
-                        .btnNew{
-                            background-color: $color-primario;
-                            color:#ffffff;
-                            width: 223px;
-                            height: 43.44px;
-                            border-radius: 20px;
-                            text-align:center;
-                            font-size: 25px;
-                            
-                            .btnIcon{
-                                margin: 0px;
-                                padding: 0px;
-                                float: left;
-                            }
-                        }
-                        
-    
-                    }
-                    .sub-container{
-                         position: relative;
-                            .info-cliente{
-                                
-                                display:inline-block;
-                                padding: 15px 25px;
-                                box-sizing:border-box;
-                                cursor: pointer;
-                                margin: 10px 15px;
-                                background-position: center;
-                                background-size: cover;
-
-                            input{
-                                width:228px;
-                                height: 51px;
-                                border-radius: 8px;
-                                stroke: #F0F1F7;
-                                font-family:"IBM Plex Sans";
-                                font-size: 22px;
-                                font-style: italic;
-                            }
-                        }
-
-                    }
-                    button{
-                        justify-self: right;
-                        background-color: $color-primario;
-                            color:#ffffff;
-                            width: 223px;
-                            height: 43.44px;
-                            border-radius: 20px;
-                            text-align:center;
-                            font-size: 25px;
-                            margin-bottom: 0px;
-                            padding: 0%;
-                    }
-
-                }
+                
                 
                 
 
