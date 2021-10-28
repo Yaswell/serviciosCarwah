@@ -1,30 +1,41 @@
+@use 'nuevo-servicio';
+@use '_box';
 body {
   background: #F7F8FC;
 }
 
 .wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
 }
-.wraper .sidebar {
+
+.wraper .Sidebar {
   width: 255px;
   height: 100vh;
   background: #363740;
   position: absolute;
 }
-.wraper .sidebar .logo {
+
+.wraper .Sidebar .logo {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.wraper .sidebar ul {
+
+.wraper .Sidebar ul {
   padding: 0;
 }
-.wraper .sidebar ul li {
+
+.wraper .Sidebar ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px;
   color: #A4A6B3;
 }
-.wraper .sidebar ul li h2 {
+
+.wraper .Sidebar ul li h2 {
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
@@ -33,14 +44,17 @@ body {
   letter-spacing: 0.4px;
   color: #ffffff;
 }
-.wraper .sidebar ul li icon svg {
+
+.wraper .Sidebar ul li icon svg {
   width: 35px;
   height: 35px;
 }
-.wraper .sidebar ul li img {
+
+.wraper .Sidebar ul li img {
   margin-left: 40px;
 }
-.wraper .sidebar ul li .title {
+
+.wraper .Sidebar ul li .title {
   margin-left: 15px;
   font-family: Mulish;
   font-style: normal;
@@ -48,23 +62,29 @@ body {
   font-size: 16px;
   margin-top: 1px;
 }
-.wraper .sidebar ul hr {
+
+.wraper .Sidebar ul hr {
   color: #A4A6B3;
 }
-.wraper .sidebar ul .active-tab {
+
+.wraper .Sidebar ul .active-tab {
   background: #F8A01A;
   color: #FFFFFF;
   border-left: 5px solid #FFFFFF;
 }
-.wraper .sidebar ul .tab:hover {
+
+.wraper .Sidebar ul .tab:hover {
   background: #A4A6B3;
   color: #ffffff;
+  -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
+
 .wraper .section {
   margin-left: 255px;
   width: 100%;
 }
+
 .wraper .section .header {
   padding: 20px;
   background: #fff;
@@ -72,6 +92,7 @@ body {
   border-bottom: 1px solid #e0e4e8;
   text-align: right;
 }
+
 .wraper .section .header .navbartext {
   height: 12%;
   text-decoration: none;
@@ -83,20 +104,25 @@ body {
   font-size: 20px;
   color: #717171;
 }
+
 .wraper .section .header .sub-menu {
   display: none;
 }
+
 .wraper .section .header .dropdown-item div a {
   display: block;
 }
+
 .wraper .section .header .dropdownMenuLink div:hover .dropdown-item {
   display: block;
 }
+
 .wraper .section .main-content {
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 30px;
 }
+
 .wraper .section .main-content h1 {
   font-family: Mulish;
   font-style: normal;
@@ -106,4 +132,11 @@ body {
   color: #252733;
 }
 
+.wraper .section .main-content .btnNew {
+  color: white;
+  position: absolute;
+  width: 33.3px;
+  height: 34px;
+  background-color: #F8A01A;
+}
 /*# sourceMappingURL=style.css.map */

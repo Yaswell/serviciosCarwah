@@ -71,19 +71,6 @@ body {
   color: #717171;
   border-bottom: 1px solid #e0e4e8;
   text-align: right;
-  /*
-  .dropdown-item{
-      display: none;
-
-  }
-  .dropdown-item div a{
-      display: block;
-
-  }
-  .dropdownMenuLink div:hover .dropdown-item{
-      display: block;
-  }
-  */
 }
 .wraper .section .header .navbartext {
   height: 12%;
@@ -95,6 +82,15 @@ body {
   text-decoration: none;
   font-size: 20px;
   color: #717171;
+}
+.wraper .section .header .sub-menu {
+  display: none;
+}
+.wraper .section .header .dropdown-item div a {
+  display: block;
+}
+.wraper .section .header .dropdownMenuLink div:hover .dropdown-item {
+  display: block;
 }
 .wraper .section .main-content {
   margin-left: 50px;
@@ -108,6 +104,86 @@ body {
   font-size: 40px;
   letter-spacing: 0.4px;
   color: #252733;
+}
+.wraper .section .main-content .box {
+  border: 1px solid grey;
+  border-radius: 25px;
+  max-width: 100%;
+  min-height: 600px;
+  color: gray;
+  background-color: white;
+  padding: 20px;
+  display: grid;
+}
+.wraper .section .main-content .box .state-bar {
+  padding: 10px;
+}
+.wraper .section .main-content .box .serch-add {
+  justify-self: right;
+}
+.wraper .section .main-content .box .serch-add input {
+  width: 328px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+.wraper .section .main-content .box .serch-add .btnSearch {
+  border: none;
+  background-color: transparent;
+}
+.wraper .section .main-content .box .serch-add .btnSearch img {
+  width: 32.72px;
+  height: 33px;
+}
+.wraper .section .main-content .box .serch-add .btnNew {
+  background-color: #F8A01A;
+  color: #ffffff;
+  width: 223px;
+  height: 43.44px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+.wraper .section .main-content .box .serch-add .btnNew .btnIcon {
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+.wraper .section .main-content .box .sub-container {
+  position: relative;
+}
+.wraper .section .main-content .box .sub-container .info-cliente {
+  display: inline-block;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+}
+.wraper .section .main-content .box .sub-container .info-cliente input {
+  width: 228px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+.wraper .section .main-content .box button {
+  justify-self: right;
+  background-color: #F8A01A;
+  color: #ffffff;
+  width: 223px;
+  height: 43.44px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0px;
+  padding: 0%;
 }
 
 /*# sourceMappingURL=style.css.map */

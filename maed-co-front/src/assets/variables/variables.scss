@@ -1,0 +1,34 @@
+// usar sass --watch sass:css
+//Colores
+$color-primario: #F8A01A;
+
+
+//Fuentes
+$title-font: Mulish;
+
+
+
+//Botones
+@mixin buttonNew {
+    color: white;
+    position: absolute;
+    width: 33.3px;
+    height: 34px;
+    background-color: $color-primario;
+}
+
+@mixin buttonNext {
+    
+    color: white;
+    position: absolute;
+    width: 33.3px;
+    height: 34px;
+    background-color: $color-primario;
+}
+
+
+
+
+
+
+
