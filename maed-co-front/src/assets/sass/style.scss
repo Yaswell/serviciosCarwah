@@ -1,8 +1,11 @@
 //sass --watch sass/style.scss css/style.css
 //Variables
-@use 'nuevo-servicio';
-@use '_box';
-@import '../variables/variables.scss';
+@use '_nuevo-servicio';
+@use '_nuevo-servicio2';
+@use '_nuevo-servicio3';
+
+
+$color-primario: #F8A01A;
 
 
 body {
@@ -12,11 +15,13 @@ body {
         display: flex;
         position: absolute;
 
-        .Sidebar {
+        .sidebar {
             width: 255px;
             height: 100vh;
             background: #363740;
-            position: absolute;
+            
+            position: sticky;
+	        top: 0; 
             
             .logo{
                 padding-top: 30px;
@@ -83,10 +88,11 @@ body {
 
         .section{
             
-            margin-left: 255px;
-            width: 100%;
+            
+            
             .header {
-                
+                position: sticky;
+	            top: 0; 
                 padding: 20px;
                 background: #fff;
                 color: #717171;
@@ -127,12 +133,11 @@ body {
                 }
             .main-content{
                 margin-left: 50px;
-               margin-right: 50px;
-               margin-top: 30px;
-             
+                margin-right: 50px;
+                margin-top: 30px;
                 h1 {
     
-                    font-family:$title-font;
+                    font-family: Mulish;
                     font-style: normal;
                     font-weight: bold;
                     font-size: 40px;
@@ -140,14 +145,13 @@ body {
                     letter-spacing: 0.4px;
                     color:#252733;
                 }
-                .btnNew{
-                    color: white;
-                    position: absolute;
-                    width: 33.3px;
-                    height: 34px;
-                    background-color: $color-primario;  
-                }
+
+                
+                
+                
+
             }
+
 
            
     

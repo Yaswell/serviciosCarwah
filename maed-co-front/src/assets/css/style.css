@@ -1,8 +1,131 @@
+.btnSearch {
+  border: none;
+  background-color: transparent;
+  width: 35px;
+}
+.btnSearch img {
+  width: 32.72px;
+  height: 33px;
+}
+
+.btnNew {
+  background-color: #F8A01A;
+  color: #ffffff;
+  width: 223px;
+  height: 43.44px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+.btnNew .btnIcon {
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+
+.butNext {
+  justify-self: end;
+  background-color: #F8A01A;
+  color: #ffffff;
+  width: 223px;
+  height: 43.44px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0px;
+  padding: 0%;
+}
+
+.btnBack {
+  justify-self: left;
+  background-color: #EEEEEE;
+  color: #8B8B8B;
+  width: 223px;
+  height: 43.44px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0px;
+  padding: 0%;
+}
+
+.backNext {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.info-cliente {
+  display: inline-block;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+}
+.info-cliente input {
+  width: 228px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+
 .box {
-  max-width: 800px;
-  min-height: 500px;
-  border: 1px gray;
-  border-radius: 5px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  max-width: 100%;
+  min-height: 600px;
+  color: gray;
+  background-color: white;
+  padding: 20px;
+  display: grid;
+}
+.box .state-bar {
+  padding: 10px;
+  justify-self: center;
+}
+.box .state-bar svg {
+  width: 100%;
+}
+.box .serch-add {
+  justify-self: right;
+  margin: 0%;
+}
+.box .serch-add input {
+  width: 328px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+.box .sub-container {
+  position: relative;
+}
+
+.table-container {
+  display: grid;
+  grid-template-columns: repeat(6, 15%);
+  grid-auto-rows: 40px;
+}
+.table-container .table-title {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  font-size: 20px;
+}
+.table-container svg {
+  cursor: pointer;
+}
+.table-container .table-header {
+  background-color: #E8E8E8;
+  text-align: center;
+}
+.table-container .table-item {
+  text-align: center;
 }
 
 body {
@@ -13,25 +136,26 @@ body {
   display: flex;
   position: absolute;
 }
-.wraper .Sidebar {
+.wraper .sidebar {
   width: 255px;
   height: 100vh;
   background: #363740;
-  position: absolute;
+  position: sticky;
+  top: 0;
 }
-.wraper .Sidebar .logo {
+.wraper .sidebar .logo {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.wraper .Sidebar ul {
+.wraper .sidebar ul {
   padding: 0;
 }
-.wraper .Sidebar ul li {
+.wraper .sidebar ul li {
   display: flex;
   padding: 20px;
   color: #A4A6B3;
 }
-.wraper .Sidebar ul li h2 {
+.wraper .sidebar ul li h2 {
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
@@ -40,14 +164,14 @@ body {
   letter-spacing: 0.4px;
   color: #ffffff;
 }
-.wraper .Sidebar ul li icon svg {
+.wraper .sidebar ul li icon svg {
   width: 35px;
   height: 35px;
 }
-.wraper .Sidebar ul li img {
+.wraper .sidebar ul li img {
   margin-left: 40px;
 }
-.wraper .Sidebar ul li .title {
+.wraper .sidebar ul li .title {
   margin-left: 15px;
   font-family: Mulish;
   font-style: normal;
@@ -55,24 +179,22 @@ body {
   font-size: 16px;
   margin-top: 1px;
 }
-.wraper .Sidebar ul hr {
+.wraper .sidebar ul hr {
   color: #A4A6B3;
 }
-.wraper .Sidebar ul .active-tab {
+.wraper .sidebar ul .active-tab {
   background: #F8A01A;
   color: #FFFFFF;
   border-left: 5px solid #FFFFFF;
 }
-.wraper .Sidebar ul .tab:hover {
+.wraper .sidebar ul .tab:hover {
   background: #A4A6B3;
   color: #ffffff;
   transition: all 0.8s;
 }
-.wraper .section {
-  margin-left: 255px;
-  width: 100%;
-}
 .wraper .section .header {
+  position: sticky;
+  top: 0;
   padding: 20px;
   background: #fff;
   color: #717171;
@@ -111,13 +233,6 @@ body {
   font-size: 40px;
   letter-spacing: 0.4px;
   color: #252733;
-}
-.wraper .section .main-content .btnNew {
-  color: white;
-  position: absolute;
-  width: 33.3px;
-  height: 34px;
-  background-color: #F8A01A;
 }
 
 /*# sourceMappingURL=style.css.map */

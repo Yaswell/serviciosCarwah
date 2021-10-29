@@ -1,0 +1,21 @@
+@import './variables';
+.table-container{
+    display: grid;
+    grid-template-columns: repeat(6,15%);
+    grid-auto-rows: 40px;
+    .table-title{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        font-size: 20px;
+    }
+    svg{
+        cursor: pointer;
+    }
+    .table-header{
+        background-color:$colo-barra-tabla ;
+        text-align: center;
+    }
+    .table-item{
+        text-align: center;
+    }
+}

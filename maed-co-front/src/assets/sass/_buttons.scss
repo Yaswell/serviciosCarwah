@@ -1,4 +1,58 @@
-@import '../variables/variables.css';
+@import './variables';
+
+.btnSearch{
+    border: none;
+    background-color: transparent;
+    width: 35px;
+    img{
+        width: 32.72px;
+        height: 33px;
+    }
+}
 .btnNew{
-    @include buttonNew(text)
+    background-color: $color-primario;
+    color:#ffffff;
+    width: 223px;
+    height: 43.44px;
+    border-radius: 20px;
+    text-align:center;
+    font-size: 25px;
+    
+    .btnIcon{
+        margin: 0px;
+        padding: 0px;
+        float: left;
+    }
+}
+
+.butNext{
+    //Probar por ID el movimiento a la derecha
+    justify-self: end;
+    background-color: $color-primario;
+        color:#ffffff;
+        width: 223px;
+        height: 43.44px;
+        border-radius: 20px;
+        text-align:center;
+        font-size: 25px;
+        margin-bottom: 0px;
+        padding: 0%;
+}
+
+.btnBack{
+    justify-self:left;
+    background-color: #EEEEEE;
+        color:#8B8B8B;
+        width: 223px;
+        height: 43.44px;
+        border-radius: 20px;
+        text-align:center;
+        font-size: 25px;
+        margin-bottom: 0px;
+        padding: 0%;
+}
+.backNext{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
 }
