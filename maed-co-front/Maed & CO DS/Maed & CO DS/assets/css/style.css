@@ -54,6 +54,25 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.info-cliente {
+  display: inline-block;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+}
+.info-cliente input {
+  width: 228px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+
 .box {
   border: 1px solid grey;
   border-radius: 25px;
@@ -86,24 +105,6 @@
 }
 .box .sub-container {
   position: relative;
-}
-.box .sub-container .info-cliente {
-  display: inline-block;
-  padding: 15px 25px;
-  box-sizing: border-box;
-  cursor: pointer;
-  margin: 10px 15px;
-  background-position: center;
-  background-size: cover;
-}
-.box .sub-container .info-cliente input {
-  width: 228px;
-  height: 51px;
-  border-radius: 8px;
-  stroke: #F0F1F7;
-  font-family: "IBM Plex Sans";
-  font-size: 22px;
-  font-style: italic;
 }
 
 .table-container {
