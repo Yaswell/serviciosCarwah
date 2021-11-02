@@ -73,6 +73,20 @@
   font-style: italic;
 }
 
+.serch-add {
+  justify-self: right;
+  margin: 0%;
+}
+.serch-add input {
+  width: 328px;
+  height: 51px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  font-family: "IBM Plex Sans";
+  font-size: 22px;
+  font-style: italic;
+}
+
 .box {
   border: 1px solid grey;
   border-radius: 25px;
@@ -89,19 +103,6 @@
 }
 .box .state-bar svg {
   width: 100%;
-}
-.box .serch-add {
-  justify-self: right;
-  margin: 0%;
-}
-.box .serch-add input {
-  width: 328px;
-  height: 51px;
-  border-radius: 8px;
-  stroke: #F0F1F7;
-  font-family: "IBM Plex Sans";
-  font-size: 22px;
-  font-style: italic;
 }
 .box .sub-container {
   position: relative;
@@ -126,6 +127,121 @@
 }
 .table-container .table-item {
   text-align: center;
+}
+
+select {
+  width: 110px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.info-planes {
+  display: inline-block;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  font-size: 22px;
+}
+.info-planes input {
+  margin-right: 10px;
+  border-radius: 8px;
+  stroke: #F0F1F7;
+  width: 20px;
+  height: 20px;
+}
+
+.info-servicio {
+  grid-template-columns: repeat(2, 50%);
+  font-size: 20px;
+}
+.info-servicio input {
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+}
+.info-servicio .precio {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.planes {
+  position: relative;
+  display: inline-block;
+}
+
+.planes-individuales {
+  display: flex;
+  margin: 15px;
+  margin-left: 40px;
+}
+.planes-individuales h3 {
+  margin-left: 40px;
+}
+.planes-individuales .planes-exteriores {
+  margin-left: 50px;
+  display: inline-block;
+}
+
+.servicio {
+  width: 340px;
+  padding: 20px;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: #7B61FF;
+  margin-left: 45px;
+}
+
+.tabla-alimentos {
+  background-color: #E7E6E6;
+  height: 100px;
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.tabla-alimentos img {
+  width: 60px;
+  filter: invert(15);
+}
+
+.table-container-confirm {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-auto-rows: 40px;
+}
+.table-container-confirm .table-header {
+  background-color: #E8E8E8;
+  text-align: center;
+}
+.table-container-confirm .table-item {
+  text-align: center;
+}
+
+.cantidad {
+  display: flex;
+  gap: 10px;
+}
+
+.resumen {
+  margin: 20px;
+}
+.resumen p {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.resumen .des {
+  display: flex;
+}
+.resumen .des input {
+  width: 100px;
+  height: 40px;
+  margin-left: 20px;
 }
 
 body {
