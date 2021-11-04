@@ -1,1 +1,45 @@
-@import './selector';
+@use './_selector';
+@use './_info-planes';
+@use './info-servicio';
+@use '_search-add';
+.planes{
+    position: relative;
+    display: inline-block;
+}
+.planes-individuales{
+    display:flex;
+    margin: 15px;
+    margin-left: 40px;
+    h3{
+        margin-left: 40px;
+    }
+    .planes-exteriores{
+        margin-left: 50px;
+        display: inline-block;
+
+    }
+}
+.servicio{
+    width: 340px;
+    padding: 20px;
+    border-style: dashed ;
+    border-width:3px ;
+    border-color: #7B61FF;
+    margin-left: 45px;
+    
+   
+}
+.tabla-alimentos{
+    background-color: #E7E6E6;
+    height: 100px;
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    img{      
+        width: 60px;
+        filter: invert(15);
+
+    }
+}
+

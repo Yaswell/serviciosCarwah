@@ -3,20 +3,22 @@
 @use '_nuevo-servicio';
 @use '_nuevo-servicio2';
 @use '_nuevo-servicio3';
-
+@use '_nuevo-servicio4';
 
 $color-primario: #F8A01A;
 
 
 body {
     background: #F7F8FC;
+    margin: 0%;
 }
     .wraper{
         display: flex;
         position: absolute;
-
-        .sidebar {
-            width: 255px;
+        
+    padding: 0px;
+        .Sidebar {
+            width: 280px;
             height: 100vh;
             background: #363740;
             
@@ -24,15 +26,17 @@ body {
 	        top: 0; 
             
             .logo{
-                padding-top: 30px;
-                padding-bottom: 30px;
+                padding: 45px;
+                
             }
             ul {
                 padding: 0;
+                
                 li {
                     display: flex;
                     padding: 20px;
                     color: #A4A6B3;
+                   
     
                     h2 {
                         font-family: Mulish;
@@ -45,22 +49,18 @@ body {
                     }
     
                     icon {
-                        svg {
+                        img {
                             width: 35px;
                             height: 35px;
                         }
                        
                     }
-                    img{
-                        
-                        margin-left: 40px;
-                      
-                    }
+                    
                     
     
                     .title {
                         margin-left: 15px;
-                        font-family: Mulish;
+                        font-family: 'Mulish';
                         font-style: normal;
                         font-weight: normal;
                         font-size: 16px;
@@ -76,18 +76,24 @@ body {
                     background: $color-primario;
                     color: #FFFFFF;
                     border-left: 5px solid #FFFFFF;
+                    img{
+                        filter: invert(15);
+                    }
                 }
                 .tab:hover{
-                    background: #A4A6B3;
-                    color: #ffffff;
+                    //Desntro del link no se que pasa con lo de los colores
+                    background: black;
+                    color: white;
                     transition: all 0.8s;
+                    filter: invert(15);
                 }
+                
             }
         }
     
 
         .section{
-            
+            margin-left: 0px;
             
             
             .header {
