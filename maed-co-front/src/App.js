@@ -8,6 +8,9 @@ import SearchAdd from './components/SearchAdd';
 import InfoCliente from './components/InfoCliente';
 
 import Sidebar from './components/Sidebar';
+
+import MyAwesomeTable from './components/MyAwesomeTable';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,25 +27,7 @@ function App() {
       <Sidebar/>
 
      
-      <Switch>
-        
-                    <Route path="/ordenes">
-                        <NuevoServicio />
-                    </Route>
-                    <Route path="/clientes">
-                        clientes
-                    </Route>
-                    <Route path="/">
-                        Nuevo Servicio
-                    </Route>
-                    <Route path="/">
-                        Nuevo Servicio
-                    </Route>
-                    <Route path="/">
-                        Nuevo Servicio
-                    </Route>
-
-                    </Switch>
+      
             
         <div className="section">
             <div className="header">
@@ -69,6 +54,7 @@ function App() {
 
                 </div>   
                 <Button text= 'Siguiente >' />
+                <p>Lorem this is si sdflsjdlfj lsdjf lsjdflsjldfjs ldfjlsdjf sldj flsjd l;fjsdl fj slfj sldfj lsj</p>
               </div>
                     
 
@@ -76,6 +62,9 @@ function App() {
             </div>
 
         </div>  
+            
+       
+
       </div>
       </Router>
   );

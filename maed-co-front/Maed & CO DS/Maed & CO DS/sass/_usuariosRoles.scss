@@ -1,0 +1,34 @@
+@import './variables';
+
+.Prueba{
+    width: 50px;
+    height: 50px;
+}
+.table-lavadores{
+
+    display: grid;
+    grid-template-columns: repeat(2,10%);
+    grid-auto-rows: 20px;
+    margin-bottom: 20px;
+    .table-lavadores-titles{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        font-size: 20px;
+
+       
+    }
+    .table-lavadores-headers{
+        margin: 10px;
+        background-color:$colo-barra-tabla ;
+        text-align: center;
+        
+
+        
+    }
+    .table-lavadores-items{
+        margin-top: 10px;
+        text-align: center;
+ 
+
+    }
+}
