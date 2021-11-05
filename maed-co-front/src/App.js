@@ -9,7 +9,7 @@ import InfoCliente from './components/InfoCliente';
 
 import Sidebar from './components/Sidebar';
 
-import MyAwesomeTable from './components/MyAwesomeTable';
+
 
 import {
   BrowserRouter as Router,
