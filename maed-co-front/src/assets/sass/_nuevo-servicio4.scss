@@ -1,0 +1,37 @@
+@import './variables';
+.table-container-confirm{
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    grid-auto-rows: 40px;
+    
+    
+    .table-header{
+        background-color:$colo-barra-tabla ;
+        text-align: center;
+    }
+    .table-item{
+        text-align: center;
+    }
+}
+.cantidad{
+    display: flex;
+    gap: 10px
+}
+.resumen{
+    margin: 20px;
+    p{
+        font-size: 20px;
+        margin-left:10px ;
+    }
+    
+    .des{
+        display: flex;
+        input{
+            width: 100px;
+            height: 40px;
+            margin-left: 20px;
+            
+        }
+        
+    }
+}

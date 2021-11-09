@@ -1,13 +1,11 @@
 import React from 'react'
-import '../assets/variables/variables.css'
 import '../assets/css/style.css'
+import '../assets/sass/_variables.scss'
 
-const onClick = (e) =>{
 
-}
 
 const Button = ({text}) => {
-    return <button onClick={onClick} className='btn'>{text}</button>
+    return <button className='butNext'>{text}</button>
 }
 
 export default Button
