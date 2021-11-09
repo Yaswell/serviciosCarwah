@@ -4,6 +4,7 @@
 @use '_nuevo-servicio2';
 @use '_nuevo-servicio3';
 @use '_nuevo-servicio4';
+@use '_login';
 
 $color-primario: #F8A01A;
 
@@ -79,6 +80,9 @@ body {
                     img{
                         filter: invert(15);
                     }
+                    Link{
+                        color: #fff;
+                    }
                 }
                 .tab:hover{
                     //Desntro del link no se que pasa con lo de los colores
@@ -90,21 +94,29 @@ body {
                 
             }
         }
-    
+         
+               
+                
+         
+           
+       
+        
 
         .section{
-            margin-left: 0px;
             
+           
             
+
             .header {
+                
+                text-decoration: none;
                 position: sticky;
-	            top: 0; 
+                top: 0; 
                 padding: 20px;
-                background: #fff;
                 color: #717171;
                 border-bottom: 1px solid #e0e4e8;
-                text-align: right;
-                
+                text-align: right; 
+                background-color: #fff;
                
                     
                     .navbartext{
@@ -137,10 +149,11 @@ body {
             
                     
                 }
+           
             .main-content{
                 margin-left: 50px;
                 margin-right: 50px;
-                margin-top: 30px;
+                
                 h1 {
     
                     font-family: Mulish;

@@ -16,14 +16,13 @@ import SidebarLink from './SidebarLink';
 
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  //Link
+  
+  Link
 } from "react-router-dom";
 
 function Sidebar(){
     return(
-        <Router>
+        
             <div className="Sidebar">
                          
                 <ul>
@@ -33,24 +32,30 @@ function Sidebar(){
                     </span>
                     
                     </li>
-                    <SidebarLink icono={nuevo_servicio} title="Nuevo Servicio" className="active-tab" route='/'/>
                     
+                    <SidebarLink  icono={nuevo_servicio} title="Nuevo Servicio" className="active-tab" route='/'/>
                     
                     <SidebarLink icono={ordenes} title="Ordenes" className="tab" route='/ordenes'/>
                     
                     <SidebarLink icono={clientes} title="Clientes" className="tab" route='/clientes'/>
-
+                    
                     <hr></hr>
+                    
                     <SidebarLink icono={reportes} title="Reportes" className="tab" route='/reportes'/>
+                    
                     <hr></hr>
+                    
                     <SidebarLink icono={planes_servicios} title="Planes y Servicios" className="tab" route='/planes-servicios'/>
+                    
+                    
                     <SidebarLink icono={rolesUsuario} title= "Roles y Usuario" className="tab" route='/roles-usuario' />
+                    
 
                 
                 </ul>
                 
         </div>
-        </Router> 
+        
     )
 }
 export default Sidebar;
