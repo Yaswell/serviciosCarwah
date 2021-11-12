@@ -1,36 +1,52 @@
 @use '_buttons';
 @use '_info-cliente';
 @use '_search-add';
+@use '_info-cliente-label';
 @import './variables';
+
 
 .box {
     border: 1px solid grey;
     border-radius: 25px;
     max-width: 100%;
-    min-height: 600px;
+    min-height: 450px;
     color: gray;
     background-color:white;
     padding: 20px;
     display:grid;
     
-    .state-bar{
-        //Esto hay que editarlo a ala hora de un pantalla pequeña
-        //margin: 30px;
-        //margin-left: 120px;
-        //margin-right: 110px;
-        padding: 10px;
-        justify-self: center;
-        svg{
-            width: 100%;
+    
+        .state-bar{
+            //Esto hay que editarlo a ala hora de un pantalla pequeña
+            //margin: 30px;
+            //margin-left: 120px;
+            //margin-right: 110px;
+            padding: 10px;
+            justify-self: center;
+            
+            
+            img{
+            
+                width: 100%;
+               
+            }
         }
-    }
+  
     
     
     .sub-container{
          position: relative;
-            
 
+         
+    }
+    .next{
+        
+        
+        justify-self: end;
+        
     }
     
-
+    .backNext{
+       //display: flex;
+    }
 }

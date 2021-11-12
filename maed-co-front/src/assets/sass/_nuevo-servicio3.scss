@@ -3,7 +3,7 @@
 @use './info-servicio';
 @use '_search-add';
 .planes{
-    position: relative;
+    
     display: inline-block;
 }
 .planes-individuales{
@@ -43,3 +43,18 @@
     }
 }
 
+.info-Servicio{
+    display: inline-block;
+}
+.des{
+    
+    input{
+        width: 80px;
+        height: 40px;
+        border-radius: 8px;
+       
+        font-family:"IBM Plex Sans";
+        font-size: 20px;
+        font-style: italic;
+    }
+}

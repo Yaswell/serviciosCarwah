@@ -41,8 +41,8 @@
 
 .btnBack{
     justify-self:left;
-    background-color: #EEEEEE;
-        color:#8B8B8B;
+    background-color: $color-primario;
+        color:#ffffff;
         width: 223px;
         height: 43.44px;
         border-radius: 20px;
@@ -52,6 +52,7 @@
         padding: 0%;
 }
 .backNext{
+    margin-top:10px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     
