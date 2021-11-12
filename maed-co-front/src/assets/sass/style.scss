@@ -5,6 +5,8 @@
 @use '_nuevo-servicio3';
 @use '_nuevo-servicio4';
 @use '_login';
+@use '_ordenes';
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 $color-primario: #F8A01A;
 
@@ -30,6 +32,7 @@ body {
                 padding: 45px;
                 
             }
+
             ul {
                 padding: 0;
                 
@@ -37,7 +40,9 @@ body {
                     display: flex;
                     padding: 20px;
                     color: #A4A6B3;
-                   
+                    #active{
+                        background-color: red;
+                    }
     
                     h2 {
                         font-family: Mulish;
@@ -71,6 +76,8 @@ body {
                 }
                 hr{
                     color: #A4A6B3;
+                    margin: 0px;
+                    padding: 0px;
                 }
                 
                 .active-tab {
@@ -91,6 +98,10 @@ body {
                     transition: all 0.8s;
                     filter: invert(15);
                 }
+               .tab:active{
+                   
+
+               }
                 
             }
         }
@@ -117,8 +128,7 @@ body {
                 border-bottom: 1px solid #e0e4e8;
                 text-align: right; 
                 background-color: #fff;
-               
-                    
+                   
                     .navbartext{
                         height: 12%;        
                         

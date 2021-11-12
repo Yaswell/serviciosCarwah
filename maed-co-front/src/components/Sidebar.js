@@ -14,11 +14,6 @@ import SidebarLink from './SidebarLink';
 
 //import NuevoServicio from './NuevoServicio';
 
-import {
-  BrowserRouter as Router,
-  
-  Link
-} from "react-router-dom";
 
 function Sidebar(){
     return(
@@ -33,29 +28,46 @@ function Sidebar(){
                     
                     </li>
                     
-                    <SidebarLink  icono={nuevo_servicio} title="Nuevo Servicio" className="active-tab" route='/'/>
+                    <SidebarLink  icono={nuevo_servicio} title="Nuevo Servicio" className='active-tab' route='/'/>
                     
-                    <SidebarLink icono={ordenes} title="Ordenes" className="tab" route='/ordenes'/>
+                    <SidebarLink icono={ordenes} title="Ordenes" className='tab' route='/ordenes' />
                     
-                    <SidebarLink icono={clientes} title="Clientes" className="tab" route='/clientes'/>
-                    
-                    <hr></hr>
-                    
-                    <SidebarLink icono={reportes} title="Reportes" className="tab" route='/reportes'/>
+                    <SidebarLink icono={clientes} id='Cliente' title="Clientes" className='tab' route='/clientes'/>
                     
                     <hr></hr>
                     
-                    <SidebarLink icono={planes_servicios} title="Planes y Servicios" className="tab" route='/planes-servicios'/>
+                    <SidebarLink icono={reportes} title="Reportes" className='tab' route='/reportes'/>
+                    
+                    <hr></hr>
+                    
+                    <SidebarLink icono={planes_servicios} title="Planes" className='tab' route='/planes-servicios'/>
                     
                     
-                    <SidebarLink icono={rolesUsuario} title= "Roles y Usuario" className="tab" route='/roles-usuario' />
+                    <SidebarLink icono={rolesUsuario} title= "Usuario" className='tab' route='/roles-usuario' />
                     
 
                 
                 </ul>
+
                 
         </div>
-        
+            
     )
 }
+
+function changeStatus(){
+    let list = document.querySelectorAll('option');
+    for (let i=0;i <list.length; i++ ){
+        list[i].onclick = function(){
+            let j=0;
+            while(j<list.length){
+                list[j++].className ='tab';
+            }
+            list[i].className = 'active-tab';
+        }
+    }
+
+}
+    
+
 export default Sidebar;

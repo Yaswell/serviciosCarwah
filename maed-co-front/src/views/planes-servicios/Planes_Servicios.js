@@ -5,7 +5,7 @@ const Planes_Servicios = () => {
     return (
         <div className="wraper">
 
-        <Sidebar/>
+        <Sidebar />
   
       
 

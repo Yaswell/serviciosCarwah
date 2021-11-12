@@ -1,4 +1,9 @@
 @import './variables';
+.vehiculo{
+    margin-top: 0px;
+    padding-top: 0px;
+    
+}
 .table-container{
     display: grid;
     grid-template-columns: repeat(6,15%);
@@ -18,4 +23,10 @@
     .table-item{
         text-align: center;
     }
+}
+.agregarVehiculo{
+    display: grid;
+    
+    justify-self: end;
+    
 }

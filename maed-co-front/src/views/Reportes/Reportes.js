@@ -6,7 +6,7 @@ const Reportes = () => {
     return (
         <div className="wraper">
 
-            <Sidebar/>
+            <Sidebar />
       
           
 

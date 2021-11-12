@@ -6,7 +6,7 @@ const Roles_y_Usuario = () => {
     return (
         <div className="wraper">
 
-        <Sidebar/>
+        <Sidebar />
   
       
 
@@ -16,7 +16,7 @@ const Roles_y_Usuario = () => {
 
         <div className="main-content">
 
-          <h1>Roles y Usuarios</h1>
+          <h1>Usuario</h1>
             
         <p>Tabla con buscador para poder editar la informacion de los clientes</p>
                 
