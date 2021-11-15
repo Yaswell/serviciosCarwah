@@ -13,7 +13,7 @@ const SidebarLink = ({icono, title, className, route}) => {
         
         <Link className='option' style={{ textDecoration: 'none', color: '#A4A6B3' }} to={route}>
         <li className={className}
-            id={window.location.pathname.includes(route) ? 'active' : ''}
+            className={window.location.pathname.includes(route) ? 'active-tab' : 'tab'}
         >
             
             <span className="icon">
