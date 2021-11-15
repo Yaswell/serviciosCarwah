@@ -69,7 +69,7 @@ const ServicioForm = () => {
                                      <button className='butNext' disabled={page === FormPages.length-1} onClick={() => {
                                          setPage((currPage) => currPage + 1);
                                          
-                                     }} >Siguiente ></button>
+                                     }} >Siguiente </button>
                                
                                 
                                 </div>

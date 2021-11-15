@@ -3,17 +3,13 @@ import { Link } from 'react-router-dom'
 //import PropType;
 
 
-const SidebarLink = ({icono, title, className, route}) => {
-    React.useEffect(() => {
-
-        console.log('route', route)
-      
-        }, [route]);
+const SidebarLink = ({icono, title, route}) => {
+    
     return (
         
         <Link className='option' style={{ textDecoration: 'none', color: '#A4A6B3' }} to={route}>
-        <li className={className}
-            className={window.location.pathname.includes(route) ? 'active-tab' : 'tab'}
+        <li 
+            className={window.location.pathname.match(route) ? 'active-tab' : 'tab'}
         >
             
             <span className="icon">

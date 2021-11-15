@@ -4,12 +4,7 @@
 import React from 'react'
 
 import './assets/css/style.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
-//import box from './components/box';
-import {
-  BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 //VIEWS
 
@@ -21,8 +16,7 @@ import Reportes from './views/Reportes/Reportes';
 import  Login  from './views/login';
 import ServicioForm from './components/ServicioForm';
 function App() {
-  return (<Router>
-          <div>
+  return (
           <Routes>
             
             <Route path='/ordenes' element = {<Ordenes />}  />
@@ -30,11 +24,10 @@ function App() {
             <Route path='/roles-usuario' element = {<RolesUsuario />} />
             <Route path='/planes-servicios' element = {<PlanesServicios  />} />
             <Route path='/reportes' element = {<Reportes />} />
-            <Route path='/login' element = {<Login />} />
-            <Route path= '/' element = {<ServicioForm />} />
+            <Route path='/' element = {<Login />} />
+            <Route path= '/n' element = {<ServicioForm />} />
           </Routes>
-          </div>
-        </Router>
+         
   );
       
  
