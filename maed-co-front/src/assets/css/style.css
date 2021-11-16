@@ -76,7 +76,7 @@
 .search-add {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: end;
   margin: 0%;
 }
 .search-add button {
@@ -338,8 +338,27 @@ body {
   height: 40px;
 }
 
+.TableComponent {
+  display: grid;
+  min-width: 960px;
+}
+
 .table-bordered {
   width: 500px;
+}
+
+:root {
+  --with-collapesed:50px;
+}
+
+.sidebar-colapsed {
+  width: var(--width-collapsed);
+}
+.sidebar-colapsed .options {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /*!

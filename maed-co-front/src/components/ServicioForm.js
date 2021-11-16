@@ -8,8 +8,11 @@ import FormConfirmacion from '../views/nuevo-servicio/FormConfirmacion';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 
-import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+
+toast.configure()
 const ServicioForm = () => {
     const [page, setPage] = useState(0);
     const FormPages=[1,2,3,4]
@@ -26,6 +29,7 @@ const ServicioForm = () => {
         precio:0,
 
     })
+    
     const PageDisplay = () => {
         if (page ===0){
             return <FormCliente formData= {FormData} setFormData={setData} />;
@@ -37,7 +41,11 @@ const ServicioForm = () => {
             return<FormConfirmacion />;
         }
     }
-
+    const notify =() => {
+        toast.success('Notificacion',{position: toast.POSITION.BOTTOM_RIGHT })
+        toast.error('Notificacion',{position: toast.POSITION.BOTTOM_RIGHT })
+        
+    }
     return (
         <div className="wraper">
 
@@ -66,10 +74,19 @@ const ServicioForm = () => {
                                          
                                      }} >  Anterior </button>
 
-                                     <button className='butNext' disabled={page === FormPages.length-1} onClick={() => {
-                                         setPage((currPage) => currPage + 1);
+                                     <button className='butNext'  onClick={() => {
+                                         if(page === FormPages.length-1){
+                                            notify()
+                                           
+                                            
+                                            
+                                         } else {
+                                            setPage((currPage) => currPage + 1);
+                                         }
                                          
-                                     }} >Siguiente </button>
+                                         
+                                         
+                                     }} >{page === FormPages.length -1 ? 'Confirmar': 'Siguiente'} </button>
                                
                                 
                                 </div>
