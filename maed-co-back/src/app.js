@@ -10,6 +10,7 @@ const maedServicesRouter = require('./routers/maed-services');
 const ordersRouter = require('./routers/orders');
 
 app.use(express.json());
+app.use(express.static('public'))
 app.use(clientsRouter);
 app.use(insideServicesRouter);
 app.use(outsideServicesRouter);
