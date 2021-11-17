@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import React from "react";
 import '../assets/css/style.css';
 //Iconos
 import logo from '../assets/img/logo.png';
-
+import {Link} from 'react-router-dom'
 import nuevo_servicio from '../assets/img/nuevo_servicio.svg';
 import ordenes from '../assets/img/ordenes.png';
 import reportes from '../assets/img/reportes.png';
@@ -21,29 +22,31 @@ function Sidebar(){
             <div className="Sidebar">
                          
                 <ul>
+                    <Link to= '/' >
                     <li className="logo">
                     <span className="icon"><img src={logo} alt="logo" width="124" height="111" viewBox="0 0 124 111" fill="none">
                         </img>
                     </span>
                     
                     </li>
+                    </Link>
                     
-                    <SidebarLink  icono={nuevo_servicio} title="Nuevo Servicio" className='active-tab' route='/'/>
+                    <SidebarLink  icono={nuevo_servicio} title="Nuevo Servicio"   route='/n'/>
                     
-                    <SidebarLink icono={ordenes} title="Ordenes" className='tab' route='/ordenes' />
+                    <SidebarLink icono={ordenes} title="Ordenes"  route='/ordenes' />
                     
-                    <SidebarLink icono={clientes} id='Cliente' title="Clientes" className='tab' route='/clientes'/>
-                    
-                    <hr></hr>
-                    
-                    <SidebarLink icono={reportes} title="Reportes" className='tab' route='/reportes'/>
+                    <SidebarLink icono={clientes} id='Cliente'  title="Clientes"  route='/clientes'/>
                     
                     <hr></hr>
                     
-                    <SidebarLink icono={planes_servicios} title="Planes" className='tab' route='/planes-servicios'/>
+                    <SidebarLink icono={reportes} title="Reportes"  route='/reportes'/>
+                    
+                    <hr></hr>
+                    
+                    <SidebarLink icono={planes_servicios} title="Planes"  route='/planes-servicios'/>
                     
                     
-                    <SidebarLink icono={rolesUsuario} title= "Usuario" className='tab' route='/roles-usuario' />
+                    <SidebarLink icono={rolesUsuario} title= "Usuario"  route='/roles-usuario' />
                     
 
                 
@@ -55,19 +58,7 @@ function Sidebar(){
     )
 }
 
-function changeStatus(){
-    let list = document.querySelectorAll('option');
-    for (let i=0;i <list.length; i++ ){
-        list[i].onclick = function(){
-            let j=0;
-            while(j<list.length){
-                list[j++].className ='tab';
-            }
-            list[i].className = 'active-tab';
-        }
-    }
 
-}
     
 
 export default Sidebar;

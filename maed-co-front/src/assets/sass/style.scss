@@ -6,6 +6,7 @@
 @use '_nuevo-servicio4';
 @use '_login';
 @use '_ordenes';
+@use '_sidebar';
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 $color-primario: #F8A01A;
@@ -22,7 +23,8 @@ body {
     padding: 0px;
         .Sidebar {
             width: 280px;
-            height: 100vh;
+            min-height: 100vh;
+            height: 100%;
             background: #363740;
             
             position: sticky;
@@ -35,7 +37,10 @@ body {
 
             ul {
                 padding: 0;
-                
+               
+                   
+                     
+                }
                 li {
                     display: flex;
                     padding: 20px;
@@ -58,10 +63,13 @@ body {
                         img {
                             width: 35px;
                             height: 35px;
+
+
                         }
                        
                     }
                     
+                   
                     
     
                     .title {
@@ -84,25 +92,17 @@ body {
                     background: $color-primario;
                     color: #FFFFFF;
                     border-left: 5px solid #FFFFFF;
-                    img{
-                        filter: invert(15);
-                    }
-                    Link{
-                        color: #fff;
-                    }
+                   
+                   
                 }
                 .tab:hover{
                     //Desntro del link no se que pasa con lo de los colores
-                    background: black;
+                    background: grey;
                     color: white;
                     transition: all 0.8s;
-                    filter: invert(15);
+                    
                 }
-               .tab:active{
-                   
-
-               }
-                
+               
             }
         }
          
@@ -190,7 +190,7 @@ body {
       
 
 
-    }
+    
 
     
     

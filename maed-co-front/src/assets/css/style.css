@@ -338,8 +338,27 @@ body {
   height: 40px;
 }
 
+.TableComponent {
+  display: grid;
+  min-width: 960px;
+}
+
 .table-bordered {
   width: 500px;
+}
+
+:root {
+  --with-collapesed:50px;
+}
+
+.sidebar-colapsed {
+  width: var(--width-collapsed);
+}
+.sidebar-colapsed .options {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /*!
@@ -11473,7 +11492,8 @@ body {
 }
 .wraper .Sidebar {
   width: 280px;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: #363740;
   position: sticky;
   top: 0;
@@ -11484,15 +11504,15 @@ body {
 .wraper .Sidebar ul {
   padding: 0;
 }
-.wraper .Sidebar ul li {
+.wraper .Sidebar li {
   display: flex;
   padding: 20px;
   color: #A4A6B3;
 }
-.wraper .Sidebar ul li #active {
+.wraper .Sidebar li #active {
   background-color: red;
 }
-.wraper .Sidebar ul li h2, .wraper .Sidebar ul li .h2 {
+.wraper .Sidebar li h2, .wraper .Sidebar li .h2 {
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
@@ -11501,11 +11521,11 @@ body {
   letter-spacing: 0.4px;
   color: #ffffff;
 }
-.wraper .Sidebar ul li icon img {
+.wraper .Sidebar li icon img {
   width: 35px;
   height: 35px;
 }
-.wraper .Sidebar ul li .title {
+.wraper .Sidebar li .title {
   margin-left: 15px;
   font-family: "Mulish";
   font-style: normal;
@@ -11513,29 +11533,23 @@ body {
   font-size: 16px;
   margin-top: 1px;
 }
-.wraper .Sidebar ul hr {
+.wraper .Sidebar hr {
   color: #A4A6B3;
   margin: 0px;
   padding: 0px;
 }
-.wraper .Sidebar ul .active-tab {
+.wraper .Sidebar .active-tab {
   background: #F8A01A;
   color: #FFFFFF;
   border-left: 5px solid #FFFFFF;
 }
-.wraper .Sidebar ul .active-tab img {
-  filter: invert(15);
-}
-.wraper .Sidebar ul .active-tab Link {
-  color: #fff;
-}
-.wraper .Sidebar ul .tab:hover {
-  background: black;
+.wraper .Sidebar .tab:hover {
+  background: grey;
   color: white;
   transition: all 0.8s;
-  filter: invert(15);
 }
-.wraper .section .header {
+
+.section .header {
   text-decoration: none;
   position: sticky;
   top: 0;
@@ -11545,7 +11559,7 @@ body {
   text-align: right;
   background-color: #fff;
 }
-.wraper .section .header .navbartext {
+.section .header .navbartext {
   height: 12%;
   text-decoration: none;
   text-align: right;
@@ -11556,20 +11570,20 @@ body {
   font-size: 20px;
   color: #717171;
 }
-.wraper .section .header .sub-menu {
+.section .header .sub-menu {
   display: none;
 }
-.wraper .section .header .dropdown-item div a {
+.section .header .dropdown-item div a {
   display: block;
 }
-.wraper .section .header .dropdownMenuLink div:hover .dropdown-item {
+.section .header .dropdownMenuLink div:hover .dropdown-item {
   display: block;
 }
-.wraper .section .main-content {
+.section .main-content {
   margin-left: 50px;
   margin-right: 50px;
 }
-.wraper .section .main-content h1, .wraper .section .main-content .h1 {
+.section .main-content h1, .section .main-content .h1 {
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;

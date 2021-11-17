@@ -36,7 +36,7 @@ export const login = () => {
 					
 					<div class="container-login-form-btn">
                    
-						<button class="login-form-btn" >
+						<button class="login-form-btn" onClick={(e) => { window.location.href = 'localhost:3000/n';}}>
 							Login
 						</button>
 					</div>
