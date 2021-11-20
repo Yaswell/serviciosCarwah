@@ -18,13 +18,12 @@ class RolesYUsuario extends Component {
       modalInsert: false,
       //Estos son los nombres que deben tener los inputs ej. name='id' 
       form:{
-        id: '',
+       
         email: '',
         username: '',
         password: '',
         firstName:'',
         lastName:'',
-        isAdmin:false,
         role:'',
       }
     };
@@ -53,6 +52,21 @@ class RolesYUsuario extends Component {
   modalInsert=()=>{
     this.setState({modalInsert: !this.state.modalInsert});
   }
+
+  seleccionarUsuario=(usuario)=>{
+    this.setState({
+      tipoModal: 'actualizar',
+      form: {
+        id: usuario.id,
+        firstName: usuario.nombre,
+        usuario: usuario.lastName,
+        username: usuario.username,
+        email: usuario.email,
+        role: usuario.role,
+      }
+    })
+  }
+
   //Capturar Inputs
   
   handleChange=async e=>{
@@ -121,18 +135,24 @@ class RolesYUsuario extends Component {
 
           <h1>Usuario</h1>
             
-        <p>Tabla con buscador para poder editar la informacion de los clientes Lorem asldkasl dlasjdla sdjlas jdlajsl dkj </p>
-        <button className="btn btn-success"  onClick={()=>this.modalInsert()}> Agregar Nuevo</button>    
-        <table>
+        <p> Hay que editar el tamaño del email en la base de datos, parece que influye
+          
+          - Hayq eu verificar por que no se actualiza cuando se carga uno </p>
+        <button className="btn btn-success" id='newUsuario'  onClick={()=>this.modalInsert()}> Agregar Nuevo</button>    
+        <table className='table-users'>
 
           <thead>
 
             <tr>
 
-              <th>ID</th>
+              
               <th>Nombre</th>
+              <th>Apellido</th>
               <th>Usuario</th>
+              <th>Correo</th>
+              <th>Rol</th>
               <th>Accion</th>
+              
               
 
 
@@ -141,15 +161,18 @@ class RolesYUsuario extends Component {
           </thead>
           <tbody>
          {this.state.data.map(client => 
-      (
+      (     
         <tr>
-          <td>{client.id}</td>
+          
           <td>{client.firstName}</td>
           <td>{client.lastName}</td>
+          <td>{client.username}</td>
+          <td>{client.email}</td>
+          <td>{client.role}</td>
           <td>
-            <button className="btn btn-primary"><FontAwesomeIcon icon={faEdit}/> </button>
+            <button className="btn btn-primary" onClick={ ()=> this.seleccionarUsuario(client)}><FontAwesomeIcon icon={faEdit}/> </button>
             {"  "}
-            <button className="btn btn-dange"><FontAwesomeIcon icon={faTrashAlt}/> </button>
+            <button className="btn btn-dange" onClick = {()=> this.peticionDelete()}><FontAwesomeIcon icon={faTrashAlt}/> </button>
 
           </td>
 
@@ -168,23 +191,32 @@ class RolesYUsuario extends Component {
 
           <ModalBody>
             <div className="form-group">
-              <label htmlFor='id'>ID</label>
-              <input type="text" className='form-control' name='id' id='id' onChange={this.handleChange} disabled
-              value={form?form.id: this.state.data.length+1} />
-              <br/>
+              
               <label htmlFor='firstName'>Nombre</label>
               <input type="text" className='form-control' name='firstName' id='firstName'
                onChange={this.handleChange}  value={form?form.firstName: ''} />
               <br/>
+
+              <label htmlFor='lastName'>Apellido</label>
+              <input type="text" className='form-control' name='lastName' id='lastName' onChange={this.handleChange} 
+              value={form?form.lastName:''} />
+              <br/>
+
+              <label htmlFor='username'>Usuario</label>
+              <input type="text" className='form-control' name='username' id='username' onChange={this.handleChange} value={form?form.username: ''}/>
+              <br/>
+
+              <label htmlFor='password'>Contraseña</label>
+              <input type="text" className='form-control' name='password' id='password' onChange={this.handleChange} value={form?form.password: ''}/>
+              <br/>
+
               <label htmlFor='email'>Email</label>
               <input type="text" className='form-control' name='email' id='email' 
               onChange={this.handleChange} value={form?form.email: ''} />
               <br/>
-              <label htmlFor='userName'>Usuario</label>
-              <input type="text" className='form-control' name='userName' id='userName' onChange={this.handleChange} value={form?form.username: ''}/>
-              <br/>
-              <label htmlFor='role'>Role</label>
-              <select className="form-select"  Disable   aria-label="multiple select example">
+              
+              <label htmlFor='rol'>Rol</label>
+              <select className="form-select"  Disable   aria-label="select example" value={form?form.role: ''}>
                 <option defaultValue>Seleccione</option>
                 <option value="1">Vendedor</option>
                 <option value="2">Caja</option>
@@ -192,9 +224,9 @@ class RolesYUsuario extends Component {
               </select>
               <br/>
             </div>
-            <ModalFooter>
+            <ModalFooter className='Mfooter' >
               <button className='btn btn-success'onClick={()=>this.peticionPost()} > Agregar</button>
-              <button className='btn btn-danger' onClick={()=>this.modalInsert()}> Cancelar</button>
+              <button className='btn btn-danger' id='trash' onClick={()=>this.modalInsert()}> Cancelar</button>
 
             </ModalFooter>
 

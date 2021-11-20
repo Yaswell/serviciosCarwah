@@ -292,6 +292,19 @@ select {
   margin-left: 20px;
 }
 
+#newUsuario {
+  border: 0ch;
+  background-color: #F8A01A;
+  justify-self: flex-end;
+}
+
+.table-users {
+  width: 100%;
+}
+.table-users .Mfooter #trash {
+  background-color: red;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11488,6 +11501,7 @@ body {
 .wraper {
   display: flex;
   position: absolute;
+  width: 100%;
   padding: 0px;
 }
 .wraper .Sidebar {
@@ -11549,6 +11563,9 @@ body {
   transition: all 0.8s;
 }
 
+.section {
+  width: 100%;
+}
 .section .header {
   text-decoration: none;
   position: sticky;

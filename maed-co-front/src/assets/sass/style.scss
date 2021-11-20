@@ -4,6 +4,7 @@
 @use '_nuevo-servicio2';
 @use '_nuevo-servicio3';
 @use '_nuevo-servicio4';
+@use '_rolesYusuarios';
 @use '_login';
 @use '_ordenes';
 @use '_sidebar';
@@ -19,8 +20,9 @@ body {
     .wraper{
         display: flex;
         position: absolute;
+        width: 100%;
         
-    padding: 0px;
+         padding: 0px;
         .Sidebar {
             width: 280px;
             min-height: 100vh;
@@ -114,7 +116,7 @@ body {
         
 
         .section{
-            
+            width: 100%;
            
             
 
