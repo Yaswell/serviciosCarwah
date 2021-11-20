@@ -8,7 +8,9 @@ const usersRouter = require('./routers/users');
 const vehiclesRouter = require('./routers/vehicles');
 const maedServicesRouter = require('./routers/maed-services');
 const ordersRouter = require('./routers/orders');
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
 app.use(clientsRouter);

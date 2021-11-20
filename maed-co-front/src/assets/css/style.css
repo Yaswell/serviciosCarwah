@@ -76,7 +76,7 @@
 .search-add {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   margin: 0%;
 }
 .search-add button {

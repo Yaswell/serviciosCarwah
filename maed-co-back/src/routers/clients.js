@@ -22,7 +22,7 @@ router.get('/clients/:id', async (req, res) => {
         if (client) {
             return res.send(client);
         }
-        res.status(404).send({ error: "Clients not found!" });
+        res.status(201).send({ error: "Clients not found!" });
         
     } catch (error) {
         res.status(500).send(error);

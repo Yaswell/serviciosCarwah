@@ -15,6 +15,7 @@ import PlanesServicios from './views/planes-servicios/Planes_Servicios';
 import Reportes from './views/Reportes/Reportes';
 import  Login  from './views/login';
 import ServicioForm from './components/ServicioForm';
+import Prueba from './views/Prueba';
 function App() {
   return (
           <Routes>
@@ -26,6 +27,7 @@ function App() {
             <Route path='/reportes' element = {<Reportes />} />
             <Route path='/' element = {<Login />} />
             <Route path= '/n' element = {<ServicioForm />} />
+            <Route path='/prueba' element = {<Prueba />} />
           </Routes>
          
   );
