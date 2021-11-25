@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
 
-const ordenes = ({}) => {
+const ordenes = () => {
     return (
         <div className="wraper">
 

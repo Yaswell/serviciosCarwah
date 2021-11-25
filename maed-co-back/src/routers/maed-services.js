@@ -7,8 +7,10 @@ router.get('/mead-services', async (req, res) => {
         const services = await maedServicesHandlers.find();
         if (services.length !== 0) {
             return res.send(services);
+        }else {
+            res.status(404).send({ error: "There are not services stored" });    
         }
-        res.status(404).send({ error: "There are not services stored" });
+        
         
     } catch (error) {
         res.send(error);
@@ -21,8 +23,10 @@ router.get('/mead-services/:id', async (req, res) => {
         const service = await maedServicesHandlers.findById(id);
         if (service) {
             return res.send(service);
+        }else { 
+            res.status(404).send({ error: "Service not found!" });
         }
-        res.status(404).send({ error: "Service not found!" });
+        
         
     } catch (error) {
         res.status(500).send(error);
@@ -35,8 +39,10 @@ router.get('/mead-services/client/:id', async (req, res) => {
         const services = await maedServicesHandlers.findByClientId(id);
         if (services.length !== 0) {
             return res.send(services);
+        }else {
+            res.status(404).send({ error: "Services not found!" });
         }
-        res.status(404).send({ error: "Services not found!" });
+        
         
     } catch (error) {
         res.status(500).send(error);
@@ -64,8 +70,10 @@ router.put('/maed-services', async (req, res) => {
         const service = await maedServicesHandlers.update(washer, adviser, leftObjects, crashes, clientId);
         if (service) {
             return res.status(201).send(service);
+        }else {
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {
@@ -80,8 +88,11 @@ router.delete('/maed-services/:id', async (req, res) => {
         const service = await vehicleHandlers.delete(id);
         if (service) {
             res.status(201).send(service);
+
+        }else { 
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {

@@ -6,22 +6,22 @@ class plansHandlers {
         const { rows } = await pool.query('SELECT * FROM plans;');
         return toCamelCase(rows);
     }
-    //There is no need to find Plans by Ids
-    //We will only find update them
+    static async findById(id) {
+        const { rows } = await pool.query('SELECT * FROM plans WHERE id = $1;', [id]);
+        return toCamelCase(rows)[0];
+    }
 
-    //THIS INSERERT IS JUST FOR NOW
-    static async insert(tipo, economico, premium, superPremium, ceramicCounting, New, vip, diamond, descripcion) {
-        const { rows } = await pool.query(`INSERT INTO plans (tipo, economico, premium, super_premium, ceramic_counting, New, vip, diamond, descripcion)
-         VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9,$10') RETURNING *;`, [tipo, economico, premium, superPremium, ceramicCounting, New, vip, diamond, descripcion]);
+    static async insert(tipo, planName, planPrice) {
+        const { rows } = await pool.query(`INSERT INTO plans (tipo, plan_name, plan_price)
+         VALUES($1, $2, $3') RETURNING *;`, [tipo, planName, planPrice]);
       
         
         return toCamelCase(rows)[0];
     }
         //Variable New will be changed becauase the world new is reserved
-    static async update(id, tipo, economico, premium, superPremium, ceramicCounting, New, vip, diamond, descripcion) {
+    static async update(id, tipo, planName, planPrice) {
         const { rows } = await pool.query(`UPDATE plans 
-        SET tipo = $2, economico = $3, premium= $4, super_premium = $5, ceramic_counting = $6, new = $7, vip = $8, diamond = $9, descripcion = $10
-        WHERE id = $1 RETURNING *;`, [id, tipo, economico, premium, superPremium, ceramicCounting, New, vip, diamond, descripcion]);
+        SET tipo = $2, plan_name = $3, plan_price= $4, WHERE id = $1 RETURNING *;`, [id, tipo, planName, planPrice]);
 
         return toCamelCase(rows)[0];
     }

@@ -8,8 +8,10 @@ router.get('/inside_services', async(req, res)=> {
         const service = await insideServiceHandlers.find();
         if(service.length !==0) {
             return res.send(service);
-        } 
-        res.status(404).send({ error: "There are not services stored" });
+        } else {
+            res.status(404).send({ error: "There are not services stored" });
+        }
+        
     } catch (error) {
         res.send(error);
     }
@@ -21,8 +23,10 @@ router.get('/inside_services/:id', async (req, res) => {
         const service = await insideServiceHandlers.findById(id);
         if (service) {
             return res.send(service);
+        }else{
+            res.status(404).send({ error: "Services not found!" });
         }
-        res.status(404).send({ error: "Services not found!" });
+        
         
     } catch (error) {
         res.send(error).status(500);
@@ -50,8 +54,10 @@ router.put('/inside_services', async (req, res) => {
         const service = await insideServiceHandlers.update(id, hid_tablero_paneles, ozono, hid_leather_vynil, limpieza_interior,lavado_motor);
         if (service) {
             return res.status(201).send(service);
+        }else{
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {
