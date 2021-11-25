@@ -24,7 +24,7 @@ router.get('/users/:id', async (req, res) => {
         const { id } = req.params;
         const user = await userHandlers.findById(id);
         if (user) {
-            return res.send(client);
+            return res.send(user);
         }else {
             res.status(404).send({ error: "User not found!" });
         }

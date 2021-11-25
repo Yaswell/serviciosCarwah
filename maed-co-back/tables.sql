@@ -78,3 +78,11 @@ CREATE TABLE orders (
     order_details JSON NOT NULL,
     client_id INTEGER NOT NULL REFERENCES clients(id) ON DELETE CASCADE
 );
+
+Table plans (
+  id SERIAL PRIMARY KEY
+  tipo VARCHAR(30)
+  plan_name VARCHAR(30)
+  plan_price INTEGER
+  
+);

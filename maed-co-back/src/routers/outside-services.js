@@ -20,8 +20,10 @@ router.get('/outside_services/:id', async (req, res) => {
         const service = await outsideServiceHandlers.findById(id);
         if (service) {
             return res.send(service);
+        }else {
+            res.status(404).send({ error: "Services not found!" });
         }
-        res.status(404).send({ error: "Services not found!" });
+        
         
     } catch (error) {
         res.send(error).status(500);
@@ -49,8 +51,10 @@ router.put('/outside_services', async (req, res) => {
         const service = await outsideServiceHandlers.update(id, descon_pintura, recons_pintura, hid_plasticos, encerado_mano, encerado_maquina, pulido_focos);
         if (service) {
             return res.status(201).send(service);
+        }else {
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {

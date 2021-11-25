@@ -16,10 +16,26 @@ router.get('/plans', async(req, res) => {
 
 })
 
+router.get('/plans/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const plan = await plansHandlers.findById(id);
+        if (plan) {
+            return res.send(plan);
+        }else { 
+            res.status(404).send({ error: "Plan not found!" });
+        }
+        
+        
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
 router.post('/plans', async(req, res) => {
     try {
-        const {  tipo, economico, premium, super_premium, ceramic_counting, New, vip, diamond, descripcion } = req.body;
-        const user = await plansHandlers.insert( tipo, economico, premium, super_premium, ceramic_counting, New, vip, diamond, descripcion);
+        const {  tipo,planName, planPrice  } = req.body;
+        const user = await plansHandlers.insert( tipo,planName, planPrice);
         if (user) {
             return res.status(201).send(user);
         }
@@ -33,12 +49,14 @@ router.post('/plans', async(req, res) => {
 
 router.put('/plans', async (req, res) => {
     try {
-        const { id,  tipo, economico, premium, super_premium, ceramic_counting, New, vip, diamond, descripcion } = req.body;
-        const user = await plansHandlers.update(id,  tipo, economico, premium, super_premium, ceramic_counting, New, vip, diamond, descripcion);
+        const { id,  tipo,planName, planPrice } = req.body;
+        const user = await plansHandlers.update(id,  tipo,planName, planPrice);
         if (user) {
             return res.status(201).send(user);
+        }else {
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {
@@ -46,5 +64,7 @@ router.put('/plans', async (req, res) => {
         }
     }
 });
+
+
 
 module.exports = router;

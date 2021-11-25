@@ -8,9 +8,7 @@ import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import ModalInsertar from '../../components/Modals/ModalInsertar';
-import ModalActualizar from '../../components/Modals/ModalActualizar';
-import ModalEliminar from '../../components/Modals/ModalEliminar';
+
 
 
 const url= 'http://localhost:3001/users';
@@ -115,9 +113,22 @@ class RolesYUsuario extends Component {
 
   
     
-    peticionPut=()=>{
-      axios.put(url+"/"+this.state.form.id, this.state.form).then(response=>{
-        this.modalInsert();
+    peticionPut=async()=>{
+      await axios.put(url+"/"+this.state.form.id, this.state.form)
+      .then(response=>{
+        var dataNueva = this.state.data;
+        dataNueva.map(cliente=> {
+          if(cliente.id ===this.state.data.id) {
+            cliente.firstName = this.state.data.firstName;
+            cliente.username=this.state.data.username;
+            cliente.lastName=this.state.data.lastName;
+            cliente.email=this.state.data.email;
+            cliente.role=this.state.data.role;
+            this.peticionPost();
+          }
+          this.setState(dataNueva);
+        });
+        
         this.peticionGet();
        
       })
@@ -199,6 +210,7 @@ class RolesYUsuario extends Component {
             </tr>
 
           </thead>
+
           <tbody>
          {this.state.isData ? this.state.data.map(client => 
       (     

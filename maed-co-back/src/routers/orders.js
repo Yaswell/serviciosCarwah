@@ -7,8 +7,10 @@ router.get('/orders', async (req, res) => {
         const orders = await ordersHandlers.find();
         if (orders.length !== 0) {
             return res.send(orders);
+        }else { 
+            res.status(404).send({ error: "There are not orders stored" });
         }
-        res.status(404).send({ error: "There are not orders stored" });
+        
         
     } catch (error) {
         res.send(error);
@@ -21,8 +23,10 @@ router.get('/orders/:id', async (req, res) => {
         const order = await ordersHandlers.findById(id);
         if (order) {
             return res.send(order);
+        }else {
+            res.status(404).send({ error: "Order not found!" });
         }
-        res.status(404).send({ error: "Order not found!" });
+       
         
     } catch (error) {
         res.status(500).send(error);
@@ -35,8 +39,10 @@ router.get('/orders/client/:id', async (req, res) => {
         const orders = await ordersHandlers.findByClientId(id);
         if (orders.length !== 0) {
             return res.send(orders);
+        }else {
+            res.status(404).send({ error: "Orders not found!" });
         }
-        res.status(404).send({ error: "Orders not found!" });
+        
         
     } catch (error) {
         res.status(500).send(error);
@@ -64,8 +70,10 @@ router.put('/orders', async (req, res) => {
         const order = await ordersHandlers.update(orderDetails, clientId);
         if (order) {
             return res.status(201).send(order);
+        }else { 
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {
@@ -80,8 +88,10 @@ router.delete('/orders/:id', async (req, res) => {
         const order = await vehicleHandlers.delete(id);
         if (order) {
             res.status(201).send(order);
+        }else { 
+            res.status(400).send({ error: "This record does not exist" });
         }
-        res.status(400).send({ error: "This record does not exist" });
+        
 
     } catch (error) {
         if (error) {
