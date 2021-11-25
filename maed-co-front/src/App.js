@@ -9,7 +9,7 @@ import {Routes, Route} from "react-router-dom";
 //VIEWS
 
 import Ordenes from './views/ordenes/ordenes';
-import Clientes from './views/Clientes/clientes';
+import Clientes from './views/Clientes/Clientes';
 import RolesUsuario from './views/roles-usuarios/Roles_y_Usuario';
 import PlanesServicios from './views/planes-servicios/Planes_Servicios';
 import Reportes from './views/Reportes/Reportes';

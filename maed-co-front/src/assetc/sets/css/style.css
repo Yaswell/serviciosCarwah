@@ -335,7 +335,7 @@ select {
   align-items: center;
   justify-content: center;
   border: 1px solid;
-  max-width: 800px;
+  width: 800px;
   max-height: 400px;
   background-color: #F4F4F4;
   padding: 30px;
@@ -361,22 +361,11 @@ select {
 .container-login .wrap-login form .wrap-input {
   margin-top: 10px;
 }
-.container-login .wrap-login form .wrap-input .iconoInput-container {
-  display: flex;
-  border: 1px solid grey;
-}
-.container-login .wrap-login form .wrap-input .iconoInput-container .icono {
-  align-self: center;
-  color: grey;
-  margin: 10px;
-  height: 100%;
-}
 .container-login .wrap-login form input {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   height: 50px;
   width: 100%;
-  border: none;
 }
 .container-login .wrap-login form button {
   margin-top: 20px;

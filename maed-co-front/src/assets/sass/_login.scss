@@ -1,22 +1,32 @@
+@import '_variables';
 * {
     box-sizing: border-box;
   }
-body {
-    background-color: green;
-    margin: 0%;
-}
+
 .container-login{
     
    display: flex;
     justify-content: center;
-    margin-top: 120px;
+    align-items: center;
+    background-color: #24303c;
+    width: 100%;
+    height: 100vh;
     .wrap-login{
         display: flex;
         align-items: center;
         justify-content: center;
         border: 1px solid;
-        width: 800px;
+        max-width: 800px;
+        max-height: 400px;
+        background-color: #F4F4F4;
+        padding: 30px; 
         
+        margin-top: 20px;
+        border-radius: 4px;
+        
+        color: black;
+        box-shadow: 7px 13px 37px #000;
+      
         .login{
             
             width: 300px;
@@ -27,25 +37,46 @@ body {
         }
 
         form{
-            
+            font-family: "Font Awesome 5 Free"; font-weight: 900;
             margin: 80px;
+            
             .login-form-title{
                 
-                font-size: 30px;
+                font-size: 40px;
             }
             .wrap-input{
                 margin-top: 10px;
-               
+                
+                .iconoInput-container{
+                    display: flex;
+                    border: 1px solid grey;
+                    .icono{
+                        align-self: center;
+                        color: grey;
+                        margin: 10px;
+                        height: 100%;
+                       
+                    }
+                }
             }
             input{
-                height: 30px;
-                width: 200px;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                height: 50px;
+                width: 100%;
+                border: none;
+                
             }
 
             button{
                 margin-top: 20px;
                 width: 100%;
                 height: 40px;
+                background-color: $color-primario;
+                color: #fff;
+                border: none;
+                font-size: 20px;
+                
             }
            
         }

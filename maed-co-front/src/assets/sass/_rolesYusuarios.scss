@@ -2,15 +2,27 @@
 #newUsuario{
     border: 0ch;
     background-color: $color-primario;
-    justify-self: flex-end;
+    float: right ;
+    margin: 20px;
+}
+.mul-select{
+    width: 100%;
 }
 .table-users{
     width: 100%;
-    
+    margin-left: 20px;
    .Mfooter{
+       background-color: green;
+       #trash{
+       
+    }
+    
+    }
     #trash{
-        background-color: red;
+        background-color: red  ;
     }
-    }
-   
 }
+.close{
+    cursor: pointer;
+}
+

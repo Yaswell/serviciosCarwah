@@ -14,6 +14,7 @@ state={
   data:[],
   modalInsertar: false,
   modalEliminar: false,
+  modalActualizar: false,
   form:{
     id: '',
     nombre: '',
