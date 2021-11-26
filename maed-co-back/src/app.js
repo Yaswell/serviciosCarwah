@@ -5,6 +5,9 @@ const insideServicesRouter = require ('./routers/inside-services');
 const outsideServicesRouter = require('./routers/outside-services');
 const plansRouter = require('./routers/plans');
 const usersRouter = require('./routers/users');
+const lavadoresRouter = require('./routers/lavadores');
+const asesoresRouter = require('./routers/asesores');
+
 const vehiclesRouter = require('./routers/vehicles');
 const maedServicesRouter = require('./routers/maed-services');
 const ordersRouter = require('./routers/orders');
@@ -36,6 +39,7 @@ app.use(usersRouter);
 app.use(vehiclesRouter);
 app.use(maedServicesRouter);
 app.use(ordersRouter);
-
+app.use(lavadoresRouter)
+app.use(asesoresRouter);
 
 module.exports = app;

@@ -8,21 +8,52 @@
 .mul-select{
     width: 100%;
 }
+.btnMaed{
+    background-color: white;
+    color: #363740;
+    border: none;
+    font-size: 30px;
+}
 .table-users{
     width: 100%;
+
     margin-left: 20px;
+    .theadRU{
+        background-color: #E8E8E8;
+        height: 35px;
+        margin-left: 50px;
+    }
+
    .Mfooter{
        background-color: green;
-       #trash{
        
-    }
     
     }
     #trash{
-        background-color: red  ;
+        border: none ;
+        background-color:white;
+        color: red;
     }
+    #edit{
+        border: none ;
+        background-color:white;
+        color:rgb(0, 172, 238);
+    }
+
 }
 .close{
     cursor: pointer;
 }
 
+
+.maed-proveedores{
+    margin: 15px;
+    display: flex;
+
+    .trabajadores{
+        margin: 20px;
+        padding: 20px;
+        
+    }
+    
+}

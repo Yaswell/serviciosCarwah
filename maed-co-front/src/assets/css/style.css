@@ -303,19 +303,47 @@ select {
   width: 100%;
 }
 
+.btnMaed {
+  background-color: white;
+  color: #363740;
+  border: none;
+  font-size: 30px;
+}
+
 .table-users {
   width: 100%;
   margin-left: 20px;
+}
+.table-users .theadRU {
+  background-color: #E8E8E8;
+  height: 35px;
+  margin-left: 50px;
 }
 .table-users .Mfooter {
   background-color: green;
 }
 .table-users #trash {
-  background-color: red;
+  border: none;
+  background-color: white;
+  color: red;
+}
+.table-users #edit {
+  border: none;
+  background-color: white;
+  color: #00acee;
 }
 
 .close {
   cursor: pointer;
+}
+
+.maed-proveedores {
+  margin: 15px;
+  display: flex;
+}
+.maed-proveedores .trabajadores {
+  margin: 20px;
+  padding: 20px;
 }
 
 * {

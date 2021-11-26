@@ -42,7 +42,7 @@ router.post('/plans', async(req, res) => {
 
     } catch (error) {
         if (error) {
-            return res.status(400).send({ error: "Plans not saved" });
+            return res.status(400).send({ error: "Plan not saved" });
          }
     }
 })

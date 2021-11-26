@@ -8,6 +8,8 @@ import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Lavadores from './Lavadores';
+import Asesores from './Asesores';
 
 
 
@@ -52,7 +54,7 @@ class RolesYUsuario extends Component {
     }  
     this.setState({data, isData: true});
     console.log(this.state.data);
-    this.notifySuccess()
+    
   }
   
 
@@ -104,7 +106,7 @@ class RolesYUsuario extends Component {
       delete this.state.form.id;
      await axios.post(url,this.state.form).then(response=>{
         this.modalInsert();
-        this.notifySuccess()
+        toast.success('Cliente registrado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
         this.peticionGet();
       }).catch(error=>{
         console.log(error.message);
@@ -114,7 +116,7 @@ class RolesYUsuario extends Component {
   
     
     peticionPut=async()=>{
-      await axios.put(url+"/"+this.state.form.id, this.state.form)
+      await axios.put(url+this.state.form.id, this.state.form)
       .then(response=>{
         var dataNueva = this.state.data;
         dataNueva.map(cliente=> {
@@ -124,6 +126,7 @@ class RolesYUsuario extends Component {
             cliente.lastName=this.state.data.lastName;
             cliente.email=this.state.data.email;
             cliente.role=this.state.data.role;
+
             this.peticionPost();
           }
           this.setState(dataNueva);
@@ -131,6 +134,11 @@ class RolesYUsuario extends Component {
         
         this.peticionGet();
        
+      }).catch(error=>{
+        console.log(error);
+        toast.error('Error al actualizar usuario', {position: toast.POSITION.BOTTOM_RIGHT });
+        
+        
       })
     }
     /*
@@ -162,10 +170,13 @@ class RolesYUsuario extends Component {
   await axios.delete(url+"/"+this.state.form.id).then(response=>{
     this.setState({modalEliminar: false});
     this.penticionGet();
-   
+    toast.success('Cliente eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
+
   }).catch(error=>{
     console.log(error);
+    toast.error('Error al eliminar usuario', {position: toast.POSITION.BOTTOM_RIGHT });
     this.notifyError(error)
+    
   })
 }
   render(){
@@ -192,7 +203,7 @@ class RolesYUsuario extends Component {
         <button className="btn btn-success" id='newUsuario'   onClick={()=>{this.setState({form: null, tipoModal: 'insert'}); this.modalInsert()}}> Agregar Nuevo</button>    
         <table className='table-users'>
 
-          <thead>
+          <thead className='theadRU'>
 
             <tr>
 
@@ -222,9 +233,9 @@ class RolesYUsuario extends Component {
           <td>{client.email}</td>
           <td>{client.role}</td>
           <td>
-            <button className="btn btn-primary" onClick={ ()=> {this.seleccionarUsuario(client);  this.modalActualizar(client)}}><FontAwesomeIcon icon={faEdit}/> </button>
+            <button id='edit' onClick={ ()=> {this.seleccionarUsuario(client);  this.modalActualizar(client)}}><FontAwesomeIcon className='actionsUsuario' icon={faEdit}/> </button>
             {"  "}
-            <button className="btn btn-dange" id="trash" onClick = {()=> {this.setState({modalEliminar: true}); this.seleccionarUsuario(client); }}><FontAwesomeIcon icon={faTrashAlt}/> </button>
+            <button  id="trash" onClick = {()=> {this.setState({modalEliminar: true}); this.seleccionarUsuario(client); }}><FontAwesomeIcon className='actionsUsuario' icon={faTrashAlt}/> </button>
 
           </td>
 
@@ -236,7 +247,13 @@ class RolesYUsuario extends Component {
           </tbody>
         </table>
         
+        <div className='maed-proveedores'> 
+            <Lavadores />
 
+            <Asesores />
+        
+        </div>
+      
         <Modal isOpen={this.state.modalInsert}>
           <ModalHeader style={{display: 'block'}}>
             <span style={{float: 'right'}} className='close' onClick={()=>this.modalInsert()}>X</span>

@@ -86,3 +86,13 @@ Table plans (
   plan_price INTEGER
   
 );
+
+CREATE TABLE lavadores(
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50)
+)
+
+CREATE TABLE asesores(
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50)
+)

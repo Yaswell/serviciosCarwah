@@ -110,8 +110,8 @@ router.post('/users/logout', async (req, res) => {
 
 router.put('/users', async (req, res) => {
     try {
-        const {id, firstName, lastName, username, email, password, isAdmin, role } = req.body;
-        const user = await userHandlers.update(id, firstName, lastName, username, email, password, isAdmin, role);
+        const {id, firstName, lastName, username, email, isAdmin, role } = req.body;
+        const user = await userHandlers.update(id, firstName, lastName, username, email, isAdmin, role);
         if (user) {
             return res.status(201).send(user);
         }else{

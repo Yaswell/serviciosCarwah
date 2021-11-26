@@ -18,7 +18,7 @@ class plansHandlers {
         
         return toCamelCase(rows)[0];
     }
-        //Variable New will be changed becauase the world new is reserved
+        
     static async update(id, tipo, planName, planPrice) {
         const { rows } = await pool.query(`UPDATE plans 
         SET tipo = $2, plan_name = $3, plan_price= $4, WHERE id = $1 RETURNING *;`, [id, tipo, planName, planPrice]);
