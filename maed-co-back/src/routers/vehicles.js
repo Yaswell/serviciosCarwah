@@ -5,7 +5,7 @@ const vehicleHandlers = require('../router-handlers/vehicles-handlers');
 router.get('/vehicles', async (req, res) => {
     try {
         const vehicles = await vehicleHandlers.find();
-        if (clients.length !== 0) {
+        if (vehicles.length !== 0) {
             return res.send(vehicles);
         }else {
             res.status(404).send({ error: "There are not vehicles stored" });

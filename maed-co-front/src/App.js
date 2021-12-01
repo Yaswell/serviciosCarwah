@@ -16,6 +16,7 @@ import Reportes from './views/Reportes/Reportes';
 import  Login  from './views/login';
 import ServicioForm from './components/ServicioForm';
 import Prueba from './views/Prueba';
+import Invoice from './components/Invoice';
 function App() {
   return (
           <Routes>
@@ -28,6 +29,8 @@ function App() {
             <Route path='/' element = {<Login />} />
             <Route path= '/n' element = {<ServicioForm />} />
             <Route path='/prueba' element = {<Prueba />} />
+            <Route path='/invoice' element = {<Invoice />} />
+
           </Routes>
          
   );

@@ -1,6 +1,8 @@
 import React from 'react'
 import Sidebar from '../../components/Sidebar';
 import Header from '../../components/Header';
+import Externos from './Externos';
+import Internos from './Internos';
 const Planes_Servicios = () => {
     return (
         <div className="wraper">
@@ -20,7 +22,9 @@ const Planes_Servicios = () => {
         <p>Tabla con buscador para poder editar la informacion de los clientes</p>
                 
 
-            
+            <Internos />
+
+            <Externos />
         </div>
 
     </div>  

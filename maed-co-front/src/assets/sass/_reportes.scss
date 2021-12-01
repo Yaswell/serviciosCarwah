@@ -1,0 +1,19 @@
+@import '_variables';
+.filtros{
+
+display: flex;
+justify-content: end;
+.filtrosReportes{
+    background-color: gray;
+    border-radius:20px ;  
+}
+.printer{
+    margin-left: 10px;
+    cursor: pointer;
+    align-self: center;
+    
+    width: 29px;
+    height: 30px;
+    color:$color-primario;
+}
+}

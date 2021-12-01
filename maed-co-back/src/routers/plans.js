@@ -35,9 +35,9 @@ router.get('/plans/:id', async (req, res) => {
 router.post('/plans', async(req, res) => {
     try {
         const {  tipo,planName, planPrice  } = req.body;
-        const user = await plansHandlers.insert( tipo,planName, planPrice);
-        if (user) {
-            return res.status(201).send(user);
+        const plan = await plansHandlers.insert( tipo,planName, planPrice);
+        if (plan) {
+            return res.status(201).send(plan);
         }
 
     } catch (error) {

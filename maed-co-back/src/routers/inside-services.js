@@ -35,8 +35,8 @@ router.get('/inside_services/:id', async (req, res) => {
 
 router.post('/inside_services', async (req, res) => {
     try {
-        const { hid_tablero_paneles, ozono, hid_leather_vynil, limpieza_interior,lavado_motor } = req.body;
-        const service = await insideServiceHandlers.insert(hid_tablero_paneles, ozono, hid_leather_vynil, limpieza_interior,lavado_motor);
+        const { hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor } = req.body;
+        const service = await insideServiceHandlers.insert(hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor);
         if (service) {
             return res.status(201).send(service);
         }
@@ -48,10 +48,10 @@ router.post('/inside_services', async (req, res) => {
     }
 });
 
-router.put('/inside_services', async (req, res) => {
+router.put('/inside_services/:id', async (req, res) => {
     try {
-        const { id, hid_tablero_paneles, ozono, hid_leather_vynil, limpieza_interior,lavado_motor } = req.body;
-        const service = await insideServiceHandlers.update(id, hid_tablero_paneles, ozono, hid_leather_vynil, limpieza_interior,lavado_motor);
+        const { id,hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor } = req.body;
+        const service = await insideServiceHandlers.update(id, hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor);
         if (service) {
             return res.status(201).send(service);
         }else{
@@ -65,4 +65,6 @@ router.put('/inside_services', async (req, res) => {
         }
     }
 });
+
+
 module.exports = router;

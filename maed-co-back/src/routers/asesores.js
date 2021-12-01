@@ -50,7 +50,7 @@ router.post('/asesores', async (req, res) => {
     }
 });
 
-router.put('/asesores/:1', async (req, res) => {
+router.put('/asesores/:id', async (req, res) => {
     try {
         const { id, nombre } = req.body;
         const asesor = await asesoresHandlers.update(id, nombre);

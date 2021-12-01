@@ -80,7 +80,7 @@ router.post('/clients', async (req, res) => {
     }
 });
 
-router.put('/clients', async (req, res) => {
+router.put('/clients/:id', async (req, res) => {
     try {
         const { id, firstName, lastName, phone, email } = req.body;
         const client = await clientsHandlers.update(id, firstName, lastName, phone, email);

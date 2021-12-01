@@ -38,7 +38,7 @@ class userHandlers {
     static async update(id, firstName, lastName, username, email, isAdmin, role) {
         const { rows } = await pool.query(`UPDATE users 
         SET first_name = $2, last_name = $3, phone = $4, email = $5, is_admin = $6, role = $7
-        WHERE id = $1 RETURNING *;`, [id, firstName, lastName, username, email, isAdmin, role]);
+        WHERE id = $1 RETURNING *;`, [id, firstName, lastName, username, email, isAdmin, role, password, tokens]);
 
         return toCamelCase(rows)[0];
     }

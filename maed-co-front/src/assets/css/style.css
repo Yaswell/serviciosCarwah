@@ -29,7 +29,7 @@
   background-color: #F8A01A;
   color: #ffffff;
   width: 223px;
-  height: 43.44px;
+  height: 38px;
   border-radius: 20px;
   text-align: center;
   font-size: 25px;
@@ -421,6 +421,10 @@ select {
   min-width: 960px;
 }
 
+.factura {
+  width: 140%;
+}
+
 .table-bordered {
   width: 500px;
 }
@@ -437,6 +441,23 @@ select {
   height: 0;
   padding: 0;
   margin: 0;
+}
+
+.filtros {
+  display: flex;
+  justify-content: end;
+}
+.filtros .filtrosReportes {
+  background-color: gray;
+  border-radius: 20px;
+}
+.filtros .printer {
+  margin-left: 10px;
+  cursor: pointer;
+  align-self: center;
+  width: 29px;
+  height: 30px;
+  color: #F8A01A;
 }
 
 /*!

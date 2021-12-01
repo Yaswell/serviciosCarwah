@@ -108,7 +108,7 @@ router.post('/users/logout', async (req, res) => {
     }
 });
 
-router.put('/users', async (req, res) => {
+router.put('/users/:id', async (req, res) => {
     try {
         const {id, firstName, lastName, username, email, isAdmin, role } = req.body;
         const user = await userHandlers.update(id, firstName, lastName, username, email, isAdmin, role);

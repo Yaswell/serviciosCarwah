@@ -49,7 +49,7 @@ router.post('/lavadores', async (req, res) => {
     }
 });
 
-router.put('/lavadores', async (req, res) => {
+router.put('/lavadores/:id', async (req, res) => {
     try {
         const { id, nombre } = req.body;
         const asesor = await lavadoresHandlers.update(id, nombre);

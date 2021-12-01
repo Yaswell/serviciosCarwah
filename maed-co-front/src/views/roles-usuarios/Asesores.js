@@ -28,7 +28,7 @@ class Asesores extends Component {
   }
 
   
-  async penticionGet() {
+  async  peticionGet() {
     const response = await fetch(url);
     if (!response.ok) {
       
@@ -47,7 +47,7 @@ class Asesores extends Component {
 
   componentDidMount() {
     
-    this.penticionGet();
+    this.peticionGet();
     
     
   }
@@ -100,7 +100,7 @@ class Asesores extends Component {
   
     
     peticionPut=async()=>{
-      await axios.put(url+this.state.form.id, this.state.form)
+      await axios.put(url + "/" + this.state.form.id, this.state.form)
       .then(response=>{
         var dataNueva = this.state.data;
         dataNueva.map(cliente=> {
@@ -135,7 +135,7 @@ class Asesores extends Component {
   peticionDelete=async()=>{
   await axios.delete(url+"/"+this.state.form.id).then(response=>{
     this.setState({modalEliminar: false});
-    this.penticionGet();
+    this.peticionGet();
     toast.success('Cliente eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
 
   }).catch(error=>{

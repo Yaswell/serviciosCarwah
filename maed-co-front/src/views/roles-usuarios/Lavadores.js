@@ -28,7 +28,7 @@ class Lavadores extends Component {
   }
 
   
-  async penticionGet() {
+  async peticionGet() {
     const response = await fetch(url);
     if (!response.ok) {
       
@@ -47,7 +47,7 @@ class Lavadores extends Component {
 
   componentDidMount() {
     
-    this.penticionGet();
+    this.peticionGet();
     
     
   }
@@ -90,23 +90,27 @@ class Lavadores extends Component {
       delete this.state.form.id;
      await axios.post(url,this.state.form).then(response=>{
         this.modalInsert();
+        
         this.peticionGet();
         toast.success('Lavador registrado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
         
       }).catch(error=>{
         console.log(error.message);
         toast.error('Error para registrar lavador',{position: toast.POSITION.BOTTOM_RIGHT })
+        toast.success('Lavador registrado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
       })
     }
 
-  
+    
     
     peticionPut=async()=>{
-      await axios.put(url+this.state.form.id, this.state.form)
+      await axios.put(url+"/"+this.state.form.id, this.state.form)
       .then(response=>{
+          
         var dataNueva = this.state.data;
-        dataNueva.map(cliente=> {
+        dataNueva.map(cliente => {
           if(cliente.id ===this.state.data.id) {
+            
             cliente.nombre = this.state.data.nombre;
             
             this.peticionPost();
@@ -133,7 +137,7 @@ class Lavadores extends Component {
   peticionDelete=async()=>{
   await axios.delete(url+"/"+this.state.form.id).then(response=>{
     this.setState({modalEliminar: false});
-    this.penticionGet();
+    this.peticionGet();
     toast.success('Lavador eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
 
   }).catch(error=>{

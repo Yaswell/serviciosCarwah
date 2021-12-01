@@ -41,7 +41,7 @@ class RolesYUsuario extends Component {
   }
 
   
-  async penticionGet() {
+  async peticionGet() {
     const response = await fetch(url);
     if (!response.ok) {
       
@@ -60,7 +60,7 @@ class RolesYUsuario extends Component {
 
   componentDidMount() {
     
-    this.penticionGet();
+    this.peticionGet();
     
     
   }
@@ -111,6 +111,7 @@ class RolesYUsuario extends Component {
       }).catch(error=>{
         console.log(error.message);
       })
+      
     }
 
   
@@ -141,25 +142,7 @@ class RolesYUsuario extends Component {
         
       })
     }
-    /*
-    peticionDelete = async (client) =>{
-      if(!client?.id) {
-        return;
-      }
-
-
-      /*
-      await fetch(url + '/' + client?.id, {
-        method: 'DELETE',
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });*/ /*
-      axios.delete(url + '/' + this.state.form.id).then(response=>{
-        
-        this.peticionGet();
-      })
-    }*/
+    
    notifySuccess =() => {
       toast.success('Notificacion',{position: toast.POSITION.BOTTOM_RIGHT })}
 
@@ -169,7 +152,7 @@ class RolesYUsuario extends Component {
   peticionDelete=async()=>{
   await axios.delete(url+"/"+this.state.form.id).then(response=>{
     this.setState({modalEliminar: false});
-    this.penticionGet();
+    this.peticionGet();
     toast.success('Cliente eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
 
   }).catch(error=>{

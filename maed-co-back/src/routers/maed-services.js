@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const maedServicesHandlers = require('../router-handlers/maed-services-handlers');
 
-router.get('/mead-services', async (req, res) => {
+router.get('/maed-services', async (req, res) => {
     try {
         const services = await maedServicesHandlers.find();
         if (services.length !== 0) {
@@ -17,7 +17,7 @@ router.get('/mead-services', async (req, res) => {
     }
 });
 
-router.get('/mead-services/:id', async (req, res) => {
+router.get('/maed-services/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const service = await maedServicesHandlers.findById(id);
@@ -33,7 +33,7 @@ router.get('/mead-services/:id', async (req, res) => {
     }
 });
 
-router.get('/mead-services/client/:id', async (req, res) => {
+router.get('/maed-services/client/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const services = await maedServicesHandlers.findByClientId(id);
@@ -49,7 +49,7 @@ router.get('/mead-services/client/:id', async (req, res) => {
     }
 });
 
-router.post('/mead-services', async (req, res) => {
+router.post('/maed-services', async (req, res) => {
     try {
         const { washer, adviser, leftObjects, crashes, clientId } = req.body;
         const service = await maedServicesHandlers.insert(washer, adviser, leftObjects, crashes, clientId);

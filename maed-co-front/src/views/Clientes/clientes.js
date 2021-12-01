@@ -8,6 +8,7 @@ import axios from 'axios';
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Invoice from '../../components/Invoice';
 
 
 const columns= [
@@ -84,6 +85,7 @@ function Clientes (){
     peticionGet();
   },[])
 
+  
 
   const peticionPost=async()=>{
     await axios.post(url, clienteSeleccionado)
@@ -97,8 +99,8 @@ function Clientes (){
     })
   }
 
-  const peticionPut=async()=>{
-    await axios.put(url+"/"+clienteSeleccionado.id, clienteSeleccionado)
+  const peticionPut=async(cliente)=>{
+    await axios.put(url+"/" + clienteSeleccionado.id, cliente)
     .then(response=>{
       var dataNueva= data;
       dataNueva.map(cliente=>{
@@ -152,7 +154,24 @@ function Clientes (){
     setModalEliminar(!modalEliminar);
   }
 
-
+  const bodyInsertar=(
+    <div className={styles.modal}>
+      <h3>Agregar Nuevo Cliente</h3>
+      <TextField className={styles.inputMaterial} label="Nombre" name="firstName" onChange={handleChange}/>
+      <br />
+      <TextField className={styles.inputMaterial} label="Apellido" name="lastName" onChange={handleChange}/>          
+<br />
+<TextField clssNme={styles.inputMaterial} label="Telefono" name="phone" onChange={handleChange}/>
+      <br />
+<TextField className={styles.inputMaterial} label="Email" name="email" onChange={handleChange}/>
+      <br /><br />
+      <div align="right">
+        <Button color="primary" onClick={()=>peticionPost()}>Insertar</Button>
+        <Button onClick={()=>abrirCerrarModalInsertar()}>Cancelar</Button>
+      </div>
+    </div>
+  )
+  
   const bodyEditar=(
     <div className={styles.modal}>
       <h3>Editar Cliente</h3>
@@ -197,9 +216,14 @@ function Clientes (){
             <div className="main-content">
 
               <h1>Clientes</h1>
-                
+                <b>Tabla Vehiculos no hace Post </b>
+                <br/>
+                <b>Tabla Plans no hace Post </b>
+                <br/>
+                <b>Tabla MaedServices no hace Post </b>
             <p>Tabla con buscador para poder editar la informacion de los clientes</p>
-                    
+            <button className="btn btn-success btnNew" id=''  onClick={()=>abrirCerrarModalInsertar()}  > Agregar Nuevo</button>           
+            
             <MaterialTable
           columns={columns}
           data={data}
@@ -208,11 +232,13 @@ function Clientes (){
             {
               icon: 'edit',
               tooltip: 'Editar',
+              id:'edit',
               onClick: (event, rowData) => seleccionarCliente(rowData, "Editar")
             },
             {
               icon: 'delete',
               tooltip: 'Eliminar',
+              id: "trash",
               onClick: (event, rowData) => seleccionarCliente(rowData, "Eliminar")
             }
           ]}
@@ -226,8 +252,18 @@ function Clientes (){
             }
           }}
         />
-                
+            <Invoice />
             </div>
+
+           
+            <Modal
+        open={modalInsertar}
+        onClose={abrirCerrarModalInsertar}>
+          {bodyInsertar}
+        </Modal>
+
+
+
             <Modal
         open={modalEditar}
         onClose={abrirCerrarModalEditar}>
