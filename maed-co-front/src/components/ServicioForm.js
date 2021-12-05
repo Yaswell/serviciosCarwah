@@ -7,6 +7,7 @@ import FormServicio from '../views/nuevo-servicio/FormServicio';
 import FormConfirmacion from '../views/nuevo-servicio/FormConfirmacion';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
+import BackIcon from '../assets/img/back.png'
 
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -72,7 +73,7 @@ const ServicioForm = () => {
                                     <button className='btnBack' disabled={page === 0} onClick={() => {
                                          setPage((currPage) => currPage - 1);
                                          
-                                     }} >  Anterior </button>
+                                     }} data-hover="Anterior">  <div><img src ={BackIcon} alt="" /></div> </button>
 
                                      <button className='butNext'  onClick={() => {
                                          if(page === FormPages.length-1){

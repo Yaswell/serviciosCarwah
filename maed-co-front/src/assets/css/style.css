@@ -40,6 +40,10 @@
   overflow: hidden;
   text-align: center;
   border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .btnNew:hover {
   cursor: pointer;
@@ -80,29 +84,105 @@
 }
 
 .butNext {
-  justify-self: end;
   background-color: #F8A01A;
   color: #ffffff;
   width: 223px;
-  height: 43.44px;
-  border-radius: 20px;
+  height: 50.4px;
+  outline: none;
+  position: relative;
+  border: 1px solid #111;
+  padding: 15px 50px;
+  overflow: hidden;
   text-align: center;
-  font-size: 25px;
-  margin-bottom: 0px;
-  padding: 0%;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.butNext:hover {
+  cursor: pointer;
+}
+.butNext:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.butNext:hover div {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+.butNext:before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+.butNext div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
 }
 
 .btnBack {
-  justify-self: left;
   background-color: #F8A01A;
   color: #ffffff;
   width: 223px;
-  height: 43.44px;
-  border-radius: 20px;
+  height: 50.4px;
+  outline: none;
+  position: relative;
+  border: 1px solid #111;
+  padding: 15px 50px;
+  overflow: hidden;
   text-align: center;
-  font-size: 25px;
-  margin-bottom: 0px;
-  padding: 0%;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.btnBack:hover {
+  cursor: pointer;
+}
+.btnBack:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.btnBack:hover div {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+.btnBack:before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  width: 100%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+.btnBack div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
 }
 
 .backNext {
@@ -131,7 +211,8 @@
 .search-add {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex;
+  border: red;
   margin: 0%;
 }
 .search-add button {
