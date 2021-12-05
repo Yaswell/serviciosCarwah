@@ -1,3 +1,4 @@
+
 .search-add{
     display:flex;
     align-items:center;
@@ -9,7 +10,16 @@
     margin: 0%;
     button{
         margin: 5px;
+        text-align: center;
+        
+        
     }
+    .btnNew{
+            img{
+                padding: 1px;
+                
+            }
+      }
     input{
         width:328px;
         height: 40px;
