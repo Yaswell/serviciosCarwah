@@ -8,6 +8,8 @@ import FormConfirmacion from '../views/nuevo-servicio/FormConfirmacion';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import BackIcon from '../assets/img/back.png'
+import NextIcon from '../assets/img/next.png'
+import CheckIcon from '../assets/img/check.png'
 
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -75,7 +77,7 @@ const ServicioForm = () => {
                                          
                                      }} data-hover="Anterior">  <div><img src ={BackIcon} alt="" /></div> </button>
 
-                                     <button className='butNext'  onClick={() => {
+                                     <button className='butNext'data-hover="confirmar" onClick={() => {
                                          if(page === FormPages.length-1){
                                             notify()
                                            
@@ -87,7 +89,7 @@ const ServicioForm = () => {
                                          
                                          
                                          
-                                     }} >{page === FormPages.length -1 ? 'Confirmar': 'Siguiente'} </button>
+                                     }} >{page === FormPages.length -1 ? <div><img src ={CheckIcon} alt="" /></div>: <div><img src ={NextIcon} alt="" /></div>} </button>
                                
                                 
                                 </div>
