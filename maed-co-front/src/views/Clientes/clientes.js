@@ -99,6 +99,7 @@ function Clientes (){
     })
   }
 
+ 
   const peticionPut=async(cliente)=>{
     await axios.put(url+"/" + clienteSeleccionado.id, cliente)
     .then(response=>{
@@ -220,7 +221,16 @@ function Clientes (){
                 <br/>
                 <b>Tabla Plans no hace Post </b>
                 <br/>
-                <b>Tabla MaedServices no hace Post </b>
+                <b>Tabla MaedServices no hace Post </b> 
+                <br/>
+                <b>Tabla uSERS no hace Update </b>
+                <br/>
+                <b>Tabla CLIENTS no hace Update </b>
+
+                tODO: 
+                Componente para vehiculos, 
+                Coneccion en nuevo servicio
+                
             <p>Tabla con buscador para poder editar la informacion de los clientes</p>
             <button className="btn btn-success btnNew" id=''  onClick={()=>abrirCerrarModalInsertar()}  > Agregar Nuevo</button>           
             
@@ -240,7 +250,11 @@ function Clientes (){
               tooltip: 'Eliminar',
               id: "trash",
               onClick: (event, rowData) => seleccionarCliente(rowData, "Eliminar")
-            }
+            },
+            
+            
+           
+            
           ]}
           options={{
             actionsColumnIndex: -1,

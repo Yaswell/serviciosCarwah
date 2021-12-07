@@ -17,7 +17,7 @@ const ordenes = () => {
             <div className="main-content">
 
               <h1>Ordenes</h1>
-            
+                <h3>El Order# será un Link que me enviará a un componente que cargará la informacion de esta orden</h3>
               <div className="tabla">
               <div class="product-list">
                         

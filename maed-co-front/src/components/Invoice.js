@@ -100,15 +100,6 @@ const Invoice = () => {
                 </div>
 
                
-                <div className="row mt-5 mb-4 footer">
-                    <div className="col-sm-8">
-                        <span>&copy; All rights reserved 2019 designed by <a className="text-info" href="#">A-Fusion</a></span>
-                    </div>
-                    <div className="col-sm-4 text-right">
-                        <a href="#" className="ml-2">Contact Us</a>
-                        <a href="#" className="ml-2">Support</a>
-                    </div>
-                </div>
                
 
             </div>

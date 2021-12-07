@@ -10,6 +10,7 @@ import axios from 'axios';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Lavadores from './Lavadores';
 import Asesores from './Asesores';
+import LavadoresCombo from '../../components/combo-box/LavadoresCombo';
 
 
 
@@ -117,7 +118,7 @@ class RolesYUsuario extends Component {
   
     
     peticionPut=async()=>{
-      await axios.put(url+this.state.form.id, this.state.form)
+      await axios.put(url+ "/" + this.state.form.id, this.state.form)
       .then(response=>{
         var dataNueva = this.state.data;
         dataNueva.map(cliente=> {
@@ -235,6 +236,7 @@ class RolesYUsuario extends Component {
 
             <Asesores />
         
+            
         </div>
       
         <Modal isOpen={this.state.modalInsert}>

@@ -25,7 +25,8 @@ class Internos extends Component {
             ozono: '',
             hidLeatherVynil: '',
             limpiezaInterior: '',
-            lavadoMotor: ''
+            lavadoMotor: '',
+            tipoVehiculo: ''
           }
         };
       }
@@ -70,7 +71,11 @@ class Internos extends Component {
           form: {
             id: usuario.id,
             hidTableroPaneles: usuario.hidTableroPaneles,
-            
+            ozono: usuario.ozono,
+            hidLeatherVynil:usuario.hidLeatherVynil,
+            limpiezaInterior:usuario.limpiezaInterior ,
+            lavadoMotor: usuario.lavadoMotor,
+            tipoVehiculo: usuario.tipoVehiculo
           }
         })
       }
@@ -177,7 +182,7 @@ class Internos extends Component {
         {this.state.isData ? this.state.data.map(lavador => 
         (     
         <tr key={lavador.id} id={lavador.id}>
-            <td> </td>
+            <td>{lavador.tipoVehiculo} </td>
             <td>{lavador.hidTableroPaneles}</td>
             <td>{lavador.limpiezaInterior}</td>
             <td>{lavador.ozono}</td>
@@ -207,12 +212,31 @@ class Internos extends Component {
 
           <ModalBody>
             <div className="form-group">
-              
+    
+              <label htmlFor='tipoVehiculo'>Tipo de Vehiculo</label>
+              <input type="text" className='form-control' name='tipoVehiculo' id='tipoVehiculo'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.tipoVehiculo: ''} />
+              <br/>
               <label htmlFor='hidTableroPaneles'>Hidratacion Tableros Paneles</label>
               <input type="text" className='form-control' name='hidTableroPaneles' id='hidTableroPaneles'
                onChange={this.handleChange}  value={this.state.form?this.state.form.hidTableroPaneles: ''} />
               <br/>
-
+              <label htmlFor='limpiezaInterior'>Limpieza Interior</label>
+              <input type="text" className='form-control' name='limpiezaInterior' id='limpiezaInterior'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.limpiezaInterior: ''} />
+              <br/>
+              <label htmlFor='ozono'>Ozono</label>
+              <input type="text" className='form-control' name='ozono' id='ozono'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.ozono: ''} />
+              <br/>
+              <label htmlFor='hidLeatherVynil'>Hidratacion Leather / Vynil</label>
+              <input type="text" className='form-control' name='hidLeatherVynil' id='hidLeatherVynil'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.hidLeatherVynil: ''} />
+              <br/>
+              <label htmlFor='lavadoMotor'>Lavado Motor</label>
+              <input type="text" className='form-control' name='lavadoMotor' id='lavadoMotor'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.lavadoMotor: ''} />
+              <br/>
             </div>
             <ModalFooter className='Mfooter' >
             <button className="btn btn-success" onClick={()=>this.peticionPost()}>Insertar</button>
@@ -231,9 +255,29 @@ class Internos extends Component {
           <ModalBody>
             <div className="form-group">
               
-              <label htmlFor='hidTableroPaneles'>Hid Tablero Paneles</label>
+            <label htmlFor='tipoVehiculo'>Tipo de Vehiculo</label>
+              <input type="text" className='form-control' name='tipoVehiculo' id='tipoVehiculo'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.tipoVehiculo: ''} />
+              <br/>
+              <label htmlFor='hidTableroPaneles'>Hidratacion Tableros Paneles</label>
               <input type="text" className='form-control' name='hidTableroPaneles' id='hidTableroPaneles'
-               onChange={this.handleChange}  value={this.state.form?this.state.hidTableroPaneles: ''} />
+               onChange={this.handleChange}  value={this.state.form?this.state.form.hidTableroPaneles: ''} />
+              <br/>
+              <label htmlFor='limpiezaInterior'>Limpieza Interior</label>
+              <input type="text" className='form-control' name='limpiezaInterior' id='limpiezaInterior'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.limpiezaInterior: ''} />
+              <br/>
+              <label htmlFor='ozono'>Ozono</label>
+              <input type="text" className='form-control' name='ozono' id='ozono'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.ozono: ''} />
+              <br/>
+              <label htmlFor='hidLeatherVynil'>Hidratacion Leather / Vynil</label>
+              <input type="text" className='form-control' name='hidLeatherVynil' id='hidLeatherVynil'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.hidLeatherVynil: ''} />
+              <br/>
+              <label htmlFor='lavadoMotor'>Lavado Motor</label>
+              <input type="text" className='form-control' name='lavadoMotor' id='lavadoMotor'
+               onChange={this.handleChange}  value={this.state.form?this.state.form.lavadoMotor: ''} />
               <br/>
 
             </div>

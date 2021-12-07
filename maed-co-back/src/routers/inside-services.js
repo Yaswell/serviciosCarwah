@@ -35,8 +35,8 @@ router.get('/inside_services/:id', async (req, res) => {
 
 router.post('/inside_services', async (req, res) => {
     try {
-        const { hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor } = req.body;
-        const service = await insideServiceHandlers.insert(hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor);
+        const { hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor, tipoVehiculo } = req.body;
+        const service = await insideServiceHandlers.insert(hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor, tipoVehiculo);
         if (service) {
             return res.status(201).send(service);
         }
@@ -50,12 +50,30 @@ router.post('/inside_services', async (req, res) => {
 
 router.put('/inside_services/:id', async (req, res) => {
     try {
-        const { id,hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor } = req.body;
-        const service = await insideServiceHandlers.update(id, hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor);
+        const { id,hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor, tipoVehiculo } = req.body;
+        const service = await insideServiceHandlers.update(id, hidTableroPaneles, ozono, hidLeatherVynil, limpiezaInterior,lavadoMotor, tipoVehiculo);
         if (service) {
             return res.status(201).send(service);
         }else{
             res.status(400).send({ error: "This record does not exist" });
+        }
+        
+
+    } catch (error) {
+        if (error) {
+           return res.status(400).send({ error: "Client not updated" });
+        }
+    }
+});
+
+router.delete('/inside_services/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const service = await insideServiceHandlers.delete(id);
+        if (service) {
+            res.status(201).send(service);
+        }else{
+            res.status(404).send({ error: "This record does not exist" });
         }
         
 

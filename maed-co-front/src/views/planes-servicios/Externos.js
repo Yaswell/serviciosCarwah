@@ -7,7 +7,16 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 
 const url= 'http://localhost:3001/outside_services';
-
+const options = [
+  {
+    label: "Carro",
+    value: "carro",
+  },
+  {
+    label: "Otros",
+    value: "otros"
+  }
+]
 class Externos extends Component  {
     constructor(props) {
         super(props);
@@ -21,8 +30,13 @@ class Externos extends Component  {
           //Estos son los nombres que deben tener los inputs ej. name='id' 
           form:{
             id: '',
-            nombre: '',
-            tipoModal: ''
+            desconPintura: "",
+            enceradoMano: "",
+            enceradoMaquina: "",
+            hidPlasticos: "",
+            pulidoFocos: "",
+            reconsPintura: "",
+            tipoVehiculo: ""
           }
         };
       }
@@ -36,7 +50,7 @@ class Externos extends Component  {
         }
         const data = await response.json();  
         if (data.error) {
-          this.notifyError();
+         toast.error('Error para registrar lavador',{position: toast.POSITION.BOTTOM_RIGHT });
           return this.setState({ isData: false });
         }  
         this.setState({data, isData: true});
@@ -66,7 +80,16 @@ class Externos extends Component  {
         
           form: {
             id: usuario.id,
-            nombre: usuario.nombre,
+            desconPintura: usuario.desconPintura,
+            enceradoMano: usuario.enceradoMano,
+            enceradoMaquina:  usuario.enceradoMaquina,
+            hidPlasticos:  usuario.hidPlasticos,
+            pulidoFocos:  usuario.pulidoFocos,
+            reconsPintura:  usuario.reconsPintura,
+            tipoVehiculo: usuario.tipoVehiculo
+            
+
+           
             
           }
         })
@@ -97,7 +120,7 @@ class Externos extends Component  {
           }).catch(error=>{
             console.log(error.message);
             toast.error('Error para registrar lavador',{position: toast.POSITION.BOTTOM_RIGHT })
-            toast.success('Lavador registrado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
+            
           })
         }
     
@@ -116,13 +139,14 @@ class Externos extends Component  {
                 this.peticionPost();
               }
               this.setState(dataNueva);
+             
             });
-            
+            toast.success('Servicio Externo actualizado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
             this.peticionGet();
            
           }).catch(error=>{
             console.log(error);
-            toast.error('Error al actualizar usuario', {position: toast.POSITION.BOTTOM_RIGHT });
+            toast.error('Error al actualizar serivio', {position: toast.POSITION.BOTTOM_RIGHT });
             
             
           })
@@ -133,12 +157,12 @@ class Externos extends Component  {
         await axios.delete(url+"/"+this.state.form.id).then(response=>{
           this.setState({modalEliminar: false});
           this.peticionGet();
-          toast.success('Lavador eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
+          toast.success('Servicio Externo eliminado exitosamente',{position: toast.POSITION.BOTTOM_RIGHT })
       
         }).catch(error=>{
           console.log(error);
-          toast.error('Error al eliminar usuario', {position: toast.POSITION.BOTTOM_RIGHT });
-          this.notifyError(error)
+          toast.error('Error al eliminar este servicio', {position: toast.POSITION.BOTTOM_RIGHT });
+         
           
         })
         }
@@ -174,7 +198,7 @@ class Externos extends Component  {
             {this.state.isData ? this.state.data.map(lavador => 
             (     
             <tr key={lavador.id} id={lavador.id}>
-                <td> </td>
+                <td>{lavador.tipoVehiculo} </td>
                 <td>{lavador.desconPintura}</td>
                 <td>{lavador.enceradoMano}</td>
                 <td>{lavador.enceradoMaquina}</td>
@@ -194,7 +218,7 @@ class Externos extends Component  {
 
             </tr>
             )
-            ): <tr> No users</tr>
+            ): <tr> No Service</tr>
             }
                 </tbody>
                 </table>
@@ -206,11 +230,40 @@ class Externos extends Component  {
 
                   <ModalBody>
                     <div className="form-group">
-                      
-                      <label htmlFor='hidTableroPaneles'>Hidratacion Tableros Paneles</label>
-                      <input type="text" className='form-control' name='hidTableroPaneles' id='hidTableroPaneles'
-                        onChange={this.handleChange}  value={this.state.form?this.state.form.hidTableroPaneles: ''} />
+                      <label> Tipo de Vehiculo </label> 
+                                    
+                      <select className='form-control' onChange={this.handleChange} name='tipoVehiculo' id='tipoVehiculo'> 
+                        {options.map((option) => (
+                          <option value={option.value}>{option.label}</option>
+                        ))}
+                      </select>
                       <br/>
+
+                      <label htmlFor='desconPintura'>Desconstruccion de Pintura</label>
+                      <input type="text" className='form-control' name='desconPintura' id='desconPintura'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.desconPintura: ''} />
+                      <br/>
+                      <label htmlFor='enceradoMano'>Encerado a mano </label>
+                      <input type="text" className='form-control' name='enceradoMano' id='enceradoMano'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.enceradoMano: ''} />
+                      <br/>
+                      <label htmlFor='enceradoMaquina'>Encerado a maquina</label>
+                      <input type="text" className='form-control' name='enceradoMaquina' id='enceradoMaquina'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.enceradoMaquina: ''} />
+                      <br/>
+                      <label htmlFor='hidPlasticos'>Hidratacion de plasticos</label>
+                      <input type="text" className='form-control' name='hidPlasticos' id='hidPlasticos'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.hidPlasticos: ''} />
+                      <br/>
+                      <label htmlFor='pulidoFocos'>Pulido de focos</label>
+                      <input type="text" className='form-control' name='pulidoFocos' id='pulidoFocos'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.pulidoFocos: ''} />
+                      <br/>
+                      <label htmlFor='reconsPintura'>Reconstruccion de pintura</label>
+                      <input type="text" className='form-control' name='reconsPintura' id='reconsPintura'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.reconsPintura: ''} />
+                      <br/>
+        
 
                     </div>
                     <ModalFooter className='Mfooter' >
@@ -230,9 +283,37 @@ class Externos extends Component  {
                   <ModalBody>
                     <div className="form-group">
                       
-                      <label htmlFor='hidTableroPaneles'>Hid Tablero Paneles</label>
-                      <input type="text" className='form-control' name='hidTableroPaneles' id='hidTableroPaneles'
-                        onChange={this.handleChange}  value={this.state.form?this.state.hidTableroPaneles: ''} />
+                    <label> Tipo de Vehiculo </label> 
+                     
+                       <select className='form-control' onChange={this.handleChange} name='tipoVehiculo' id='tipoVehiculo'> 
+                        <option  onChange={this.handleChange} name='tipoVehiculo' value={this.state.form?this.state.form.tipoVehiculo: ''}>Carro</option>
+                        <option onChange={this.handleChange} name='tipoVehiculo' value={this.state.form?this.state.form.tipoVehiculo: ''}>Otros</option>
+                      </select>
+                      <br/>
+
+                      <label htmlFor='desconPintura'>Desconstruccion de Pintura</label>
+                      <input type="text" className='form-control' name='desconPintura' id='desconPintura'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.desconPintura: ''} />
+                      <br/>
+                      <label htmlFor='enceradoMano'>Encerado a mano </label>
+                      <input type="text" className='form-control' name='enceradoMano' id='enceradoMano'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.enceradoMano: ''} />
+                      <br/>
+                      <label htmlFor='enceradoMaquina'>Encerado a maquina</label>
+                      <input type="text" className='form-control' name='enceradoMaquina' id='enceradoMaquina'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.enceradoMaquina: ''} />
+                      <br/>
+                      <label htmlFor='hidPlasticos'>Hidratacion de plasticos</label>
+                      <input type="text" className='form-control' name='hidPlasticos' id='hidPlasticos'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.hidPlasticos: ''} />
+                      <br/>
+                      <label htmlFor='pulidoFocos'>Pulido de focos</label>
+                      <input type="text" className='form-control' name='pulidoFocos' id='pulidoFocos'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.pulidoFocos: ''} />
+                      <br/>
+                      <label htmlFor='reconsPintura'>Reconstruccion de pintura</label>
+                      <input type="text" className='form-control' name='reconsPintura' id='reconsPintura'
+                        onChange={this.handleChange}  value={this.state.form?this.state.form.reconsPintura: ''} />
                       <br/>
 
                     </div>
@@ -247,7 +328,7 @@ class Externos extends Component  {
 
                 <Modal isOpen={this.state.modalEliminar}>
                     <ModalBody>
-                        Estás seguro que deseas eliminar este lavador:  {this.state.form && this.state.form.hidTableroPaneles}
+                        Estás seguro que deseas eliminar este servicio:  {this.state.form && this.state.form.tipoVehiculo}
                     </ModalBody>
                     <ModalFooter>
                       <button className="btn btn-danger" onClick={()=> {this.peticionDelete(); this.setState({modalEliminar: false})} }>Sí</button>

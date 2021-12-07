@@ -3,13 +3,18 @@ import SearchAdd from '../../components/SearchAdd';
 import InfoCliente from '../../components/InfoCliente';
 import cliente from '../../assets/img/stateBar/cliente.svg'
 import Statebar from '../../components/statebar';
-
+import ModalInsertar from '../../components/Modals/ModalInsertar';
 export const Form1 = ({formData, setFormData}) => {
+
+    function Modal(){
+        <ModalInsertar />
+    }
     return (
         <div>
              <Statebar icono={cliente} /> 
              <div className="sub-container">
              <SearchAdd  value={formData.telefono} 
+                                onClick={Modal()}
                                 onChange= {(event) =>{ setFormData({...formData, telefono: event.target.value});
                             }} />  
                                 <InfoCliente title='Nombre' sugestion= 'Jose..' 
