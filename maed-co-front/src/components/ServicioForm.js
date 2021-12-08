@@ -77,7 +77,7 @@ const ServicioForm = () => {
                                          
                                      }} data-hover="Anterior">  <div><img src ={BackIcon} alt="" /></div> </button>
 
-                                     <button className='butNext'data-hover="confirmar" onClick={() => {
+                                     <button className='butNext'data-hover="Siguiente" onClick={() => {
                                          if(page === FormPages.length-1){
                                             notify()
                                            
