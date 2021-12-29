@@ -121,7 +121,7 @@ router.put('/users/:id', async (req, res) => {
 
     } catch (error) {
         if (error) {
-           return res.status(400).send({ error: "User not updated" });
+           return res.status(400).send({ err: "User not updated", error });
         }
     }
 });

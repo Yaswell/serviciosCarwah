@@ -217,15 +217,15 @@ function Clientes (){
             <div className="main-content">
 
               <h1>Clientes</h1>
-                <b>Tabla Vehiculos no hace Post </b>
+                <b>Tabla Vehiculos agregarle find by ClientID</b>
                 <br/>
-                <b>Tabla Plans no hace Post </b>
+                <b>Tabla Clients porner Phone que no se repita </b>
                 <br/>
-                <b>Tabla MaedServices no hace Post </b> 
+                <b> </b> 
                 <br/>
-                <b>Tabla uSERS no hace Update </b>
+                <b>e </b>
                 <br/>
-                <b>Tabla CLIENTS no hace Update </b>
+                <b> </b>
 
                 tODO: 
                 Componente para vehiculos, 

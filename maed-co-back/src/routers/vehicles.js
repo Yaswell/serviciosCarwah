@@ -75,7 +75,7 @@ router.post('/vehicles', async (req, res) => {
 
     } catch (error) {
         if (error) {
-           return res.status(400).send({ error: "Vehicle not saved" });
+           return res.status(400).send({ err: "Vehicle not saved" });
         }
     }
 });

@@ -79,7 +79,7 @@ const FormServicio = ({formData, setFormData}) => {
              <div className='info-cliente'>
                             
                             <Selector title='Lavadores' opciones= {lavadores} />
-                            <Selector title= 'Acesores' opciones = {lavadores2} />
+                            <Selector title= 'Asesores' opciones = {lavadores2} />
                            
 
                             <InfoCliente title = 'Tipo de Vehiculo' sugestion= 'Esto no es editable, viene de Db' readOnly />

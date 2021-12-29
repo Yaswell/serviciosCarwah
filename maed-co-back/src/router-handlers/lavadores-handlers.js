@@ -11,12 +11,14 @@ class lavadoresHandlers{
         const { rows } = await pool.query('SELECT * FROM lavadores WHERE id = $1;', [id]);
         return toCamelCase(rows)[0];
     }
+
     static async insert(nombre) {
         const { rows } = await pool.query(`INSERT INTO lavadores (nombre)
          VALUES($1) RETURNING *;`, [nombre]);
         
         return toCamelCase(rows)[0];
     }
+    
     static async update(id, nombre) {
         const { rows } = await pool.query(`UPDATE lavadores 
         SET nombre = $2

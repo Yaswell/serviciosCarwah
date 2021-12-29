@@ -25,7 +25,7 @@ class vehicleHandlers {
 
     static async insert(brand, model, plate, color, vehicleType, clientId) {
         const { rows } = await pool.query(`
-        INSERT INTO vehicles (brand, model, plate, color, vehicle_type, cliente_id)
+        INSERT INTO vehicles (brand, model, plate, color, vehicle_type, client_id)
         VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`, [brand, model, plate, color, vehicleType, clientId]);
 
         return toCamelCase(rows)[0];

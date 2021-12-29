@@ -59,7 +59,7 @@ router.post('/maed-services', async (req, res) => {
 
     } catch (error) {
         if (error) {
-           return res.status(400).send({ error: "Service not saved" });
+           return res.status(400).send({ err: "Service not saved", error });
         }
     }
 });

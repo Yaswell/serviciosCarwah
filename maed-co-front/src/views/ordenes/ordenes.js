@@ -18,24 +18,16 @@ const ordenes = () => {
 
               <h1>Ordenes</h1>
                 <h3>El Order# será un Link que me enviará a un componente que cargará la informacion de esta orden</h3>
+                <p>Especificar como se hizo el pago </p>
               <div className="tabla">
               <div class="product-list">
                         
                         <div class="row border-bottom mb-4">
                             <div class="col-sm-8 pt-2"><h6 class="mb-4 bc-header">Order listing</h6></div>
                             <div class="col-sm-4 text-right pb-3">
-                                <button type="button" class="btn btn-danger icon-round shadow pull-right">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                               
 
-                                <div class="pull-right mr-3 btn-order-bulk">
-                                    <select class="shadow bg-secondary bulk-actions">
-                                        <option data-display="<span class='text-white'><b>Bulk status</b></span>">Status options</option>
-                                        <option value="1">Pending</option>
-                                        <option value="2">Cancelled</option>
-                                        <option value="4">Delivered</option>
-                                    </select>
-                                </div>
+                              
 
                                 <div class="clearfix"></div>
                             </div>
@@ -56,7 +48,7 @@ const ordenes = () => {
                                         </th>
                                         <th>Order ID</th>
                                         <th>Customer</th>
-                                        <th>Status</th>
+                                        <th>Telefono</th>
                                         <th>Total</th>
                                         <th>Order date</th>
                                         <th>Action</th>
