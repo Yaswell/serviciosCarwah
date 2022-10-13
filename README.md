@@ -1,7 +1,7 @@
 # Maed-CO
-Desarrollo de aplicación para Maed &amp; CO
+Desarrollo de aplicación llamada Maed &amp; CO que es la idea de un carwash
 
-El Desarrollo de la plataforma está dividida en dos verciones, front-end realizado con NodeJs y con Postgress SQl para el modelado de la base de datos, finalmente el front-end desarrollado con NodeJs. 
+El Desarrollo de la plataforma está dividida en dos verciones, front-end realizado con NodeJs y con Postgress SQl para el modelado de la base de datos, finalmente el front-end desarrollado con ReactJs. 
 
 BACK-End
 
