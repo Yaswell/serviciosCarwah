@@ -1,14 +1,13 @@
 {
   "name": "maed-co-back",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "migrate": "node-pg-migrate"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yaswell De la Rosa",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -25,5 +24,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaswell/Maed-CO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaswell/Maed-CO/issues"
+  },
+  "homepage": "https://github.com/Yaswell/Maed-CO#readme",
+  "description": ""
 }

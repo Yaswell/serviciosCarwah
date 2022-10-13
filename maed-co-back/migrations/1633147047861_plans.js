@@ -5,10 +5,11 @@ exports.shorthands = undefined;
 exports.up = pgm => {
     pgm.sql (`
     CREATE TABLE plans (
-        id SERIAL PRIMARY KEY
-        tipo VARCHAR(30)
-        plan_name VARCHAR(30)
+        id SERIAL PRIMARY KEY,
+        tipo VARCHAR(30),
+        plan_name VARCHAR(30),
         plan_price INTEGER
+        )
     `)
 };
 
