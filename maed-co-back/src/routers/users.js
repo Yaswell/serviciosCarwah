@@ -96,7 +96,7 @@ router.post('/users/login', async (req, res) => {
     }
 });
 
-router.post('/users/logout', async (req, res) => {
+router.delete('/users/logout', async (req, res) => {
     try {
         await userHandlers.logout(req.user, req.token);
         res.send('Logged Out');

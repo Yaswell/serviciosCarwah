@@ -4,7 +4,7 @@ const pool = require('./src/pool');
 pool
     .connect({
     host: 'localhost',
-    port: 5432,
+    port: 5433,
     database: 'maed',
     user: 'postgres',
     password: 'delarosa'
