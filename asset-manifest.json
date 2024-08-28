@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/serviciosCarwah/static/css/main.a8090b40.css",
+    "main.js": "/serviciosCarwah/static/js/main.a08f39bf.js",
+    "static/js/239.be3780e2.chunk.js": "/serviciosCarwah/static/js/239.be3780e2.chunk.js",
+    "static/js/213.3d60df38.chunk.js": "/serviciosCarwah/static/js/213.3d60df38.chunk.js",
+    "static/js/455.7005f458.chunk.js": "/serviciosCarwah/static/js/455.7005f458.chunk.js",
+    "static/js/488.1c0e9ea1.chunk.js": "/serviciosCarwah/static/js/488.1c0e9ea1.chunk.js",
+    "static/media/logo.png": "/serviciosCarwah/static/media/logo.f21f2c32b8ccf60f5774.png",
+    "static/media/buscar.png": "/serviciosCarwah/static/media/buscar.f1125964490a5201b7b6.png",
+    "static/media/base-de-datos.png": "/serviciosCarwah/static/media/base-de-datos.9892469978607394b5a3.png",
+    "static/media/cliente.svg": "/serviciosCarwah/static/media/cliente.ba289625f0a8b02e1547f58a8b75199e.svg",
+    "static/media/servicio.svg": "/serviciosCarwah/static/media/servicio.3965aa8b23e852cbedbff25bd3d9c19f.svg",
+    "static/media/confirmacion.svg": "/serviciosCarwah/static/media/confirmacion.6f8a66a0fcecddd8bc7c585895c6f4fd.svg",
+    "static/media/vehiculo.svg": "/serviciosCarwah/static/media/vehiculo.cb524f5aedc6fd863b45e02518df19a4.svg",
+    "static/media/clientes.svg": "/serviciosCarwah/static/media/clientes.1547b1ed42fbd36aa0bfcbd953b725be.svg",
+    "static/media/nuevo_servicio.svg": "/serviciosCarwah/static/media/nuevo_servicio.b55e222b6fb5b4d8809e8433035486a0.svg",
+    "index.html": "/serviciosCarwah/index.html",
+    "static/media/agents.svg": "/serviciosCarwah/static/media/agents.c00c09bf9269d4f3a2b11bf158926a1f.svg",
+    "main.a8090b40.css.map": "/serviciosCarwah/static/css/main.a8090b40.css.map",
+    "main.a08f39bf.js.map": "/serviciosCarwah/static/js/main.a08f39bf.js.map",
+    "239.be3780e2.chunk.js.map": "/serviciosCarwah/static/js/239.be3780e2.chunk.js.map",
+    "213.3d60df38.chunk.js.map": "/serviciosCarwah/static/js/213.3d60df38.chunk.js.map",
+    "455.7005f458.chunk.js.map": "/serviciosCarwah/static/js/455.7005f458.chunk.js.map",
+    "488.1c0e9ea1.chunk.js.map": "/serviciosCarwah/static/js/488.1c0e9ea1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8090b40.css",
+    "static/js/main.a08f39bf.js"
+  ]
+}
